@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/squaak.wav-7b79f5ffe9a86bea141a2b9495586d45.sample"
+
+[deps]
+
+source_file="res://sfx/squaak.wav"
+dest_files=[ "res://.import/squaak.wav-7b79f5ffe9a86bea141a2b9495586d45.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

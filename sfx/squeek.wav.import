@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/squeek.wav-6da5efd8e9d140b01789dd21b2bb117d.sample"
+
+[deps]
+
+source_file="res://sfx/squeek.wav"
+dest_files=[ "res://.import/squeek.wav-6da5efd8e9d140b01789dd21b2bb117d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

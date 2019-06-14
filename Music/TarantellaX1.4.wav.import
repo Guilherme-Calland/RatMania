@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TarantellaX1.4.wav-76dbc151d2d94750636ed0e26c2b25ce.sample"
+
+[deps]
+
+source_file="res://Music/TarantellaX1.4.wav"
+dest_files=[ "res://.import/TarantellaX1.4.wav-76dbc151d2d94750636ed0e26c2b25ce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
