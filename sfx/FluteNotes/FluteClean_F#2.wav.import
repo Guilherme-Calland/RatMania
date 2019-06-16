@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FluteClean_F#2.wav-0eda161d987e225988ed15ee265194ab.sample"
+
+[deps]
+
+source_file="res://sfx/FluteNotes/FluteClean_F#2.wav"
+dest_files=[ "res://.import/FluteClean_F#2.wav-0eda161d987e225988ed15ee265194ab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

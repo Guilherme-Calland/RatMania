@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/C.wav-ee58f57f6e64b1b9a5836776159587ae.sample"
+
+[deps]
+
+source_file="res://sfx/FluteNotes/FluteNote_Short/C.wav"
+dest_files=[ "res://.import/C.wav-ee58f57f6e64b1b9a5836776159587ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
