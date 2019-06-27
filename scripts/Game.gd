@@ -30,8 +30,6 @@ onready var Gs = $"FluteSong/G#"
 onready var Flow = $FluteSong/Flow
 onready var Elow = $FluteSong/Elow
 
-
-
 onready var S = $Keys/S
 onready var K = $Keys/K
 
@@ -40,17 +38,18 @@ onready var S_pressed_text = preload("res://SPRITES/TECLADO/S_pressed.png")
 onready var K_text = preload("res://SPRITES/TECLADO/K.png")
 onready var K_pressed_text = preload("res://SPRITES/TECLADO/K_pressed.png")
 
-
+var time_start = 0
+var elapsed = 0
 onready var acerto0 = false
 onready var acerto1 = false
 
 func _ready():
 	set_process(true)
-	pass 
-
+	time_start = OS.get_unix_time()
 
 func _process(delta):
-	
+	var time_now = OS.get_unix_time()
+	elapsed = time_now - time_start
 	$Scenary.scenaryRoll(speed)
 	$Flute.fluteMovement(speed)
 	$Mouse.mouseMovement(speed, score)
@@ -85,7 +84,6 @@ func _process(delta):
 	if time == 245:
 		K.hide()
 	############################
-	
 	#1o rato
 	if time == 535:
 		MouseTemp.show()
@@ -161,6 +159,3 @@ func _process(delta):
 		MouseTemp.hide()
 		
 	time += 1
-	pass
-	
-	
