@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/F_flute.wav-448d3bb875036728124a36c078483686.sample"
+
+[deps]
+
+source_file="res://sfx/Flute/medium_shorter/F_flute.wav"
+dest_files=[ "res://.import/F_flute.wav-448d3bb875036728124a36c078483686.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

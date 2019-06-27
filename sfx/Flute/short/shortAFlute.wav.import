@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shortAFlute.wav-037f32abcd2c2aa05c07f592dfec3d48.sample"
+
+[deps]
+
+source_file="res://sfx/Flute/short/shortAFlute.wav"
+dest_files=[ "res://.import/shortAFlute.wav-037f32abcd2c2aa05c07f592dfec3d48.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mediumAFlute.wav-0f4ed3b428082f39f1b6c2da35e21c94.sample"
+
+[deps]
+
+source_file="res://sfx/Flute/medium/mediumAFlute.wav"
+dest_files=[ "res://.import/mediumAFlute.wav-0f4ed3b428082f39f1b6c2da35e21c94.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

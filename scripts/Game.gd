@@ -20,6 +20,17 @@ onready var squaak = $Mouse/MouseTemp/Squaak
 onready var flute_song100 = $FluteSong/FluteSong100
 onready var note_1 = $FluteSong/note_1
 onready var note_2 = $FluteSong/note_2
+onready var A = $FluteSong/A
+onready var B = $FluteSong/B
+onready var Cs = $"FluteSong/C#"
+onready var D = $FluteSong/D
+onready var E = $FluteSong/E
+onready var Fs = $"FluteSong/F#"
+onready var Gs = $"FluteSong/G#"
+onready var Flow = $FluteSong/Flow
+onready var Elow = $FluteSong/Elow
+
+
 
 onready var S = $Keys/S
 onready var K = $Keys/K
@@ -53,22 +64,21 @@ func _process(delta):
 		squeek.play()
 	if time == 90:
 		S.texture = S_pressed_text
-		note_1.play()
+		E.play()
 		MouseTemp.hide()
 	if time == 110:
 		S.texture = S_text
 	if time == 115: 
 		S.hide()
 	
-	
 	if time == 150:
 		K.show()
-	if time == 180:
+	if time == 175:
 		MouseTemp.show()
 		squaak.play()
 	if time == 210:
 		K.texture = K_pressed_text
-		note_2.play()
+		A.play()
 		MouseTemp.hide()
 	if time == 225: 
 		K.texture = K_text
@@ -82,8 +92,8 @@ func _process(delta):
 		squeek.play()
 	if time >= 565 && time <= 575:
 		if Input.is_action_pressed("button_s"):
-			if !note_1.playing:
-				note_1.play()
+			if !E.playing:
+				E.play()
 				MouseTemp.hide()
 				Mouse0.show()
 	if time == 575:
@@ -95,8 +105,8 @@ func _process(delta):
 		squaak.play()
 	if time >= 680 && time <= 690:
 		if Input.is_action_pressed("button_k"):
-			if !note_2.playing:
-				note_2.play()
+			if !A.playing:
+				A.play()
 				MouseTemp.hide()
 				Mouse1.show()
 	if time == 685:
@@ -108,44 +118,46 @@ func _process(delta):
 		K.show()
 	if time == 1015:
 		MouseTemp.show()
-		squeek.play()
-	if time == 1045:
 		squaak.play()
+	if time == 1045:
+		squeek.play()
 	
 	if time == 1160:
 		MouseTemp.hide()
-		S.texture = S_pressed_text
-		note_1.play()
-	if time == 1170:
-		S.texture = S_text
 		K.texture = K_pressed_text
-		note_2.play() 
+		Flow.play()
+	if time == 1170:
+		K.texture = K_text
+		S.texture = S_pressed_text
+		Flow.stop()
+		Elow.play() 
 	if time == 1190:
 		S.hide()
 		K.hide()
+		S.texture = S_text
 	###############################
 	
 	#3o rato
 	if time == 1500:
 		MouseTemp.show()
-		squeek.play()
-	if time == 1530:
 		squaak.play()
+	if time == 1530:
+		squeek.play()
 	
 	if time >= 1630 && time <= 1640:
-		if Input.is_action_pressed("button_s"):
-			if !note_1.playing:
-				note_1.play()
+		if Input.is_action_pressed("button_k"):
+			if !Flow.playing:
+				Flow.play()
 				acerto0 = true
 	if time >= 1640 && time <= 1655:
-		if Input.is_action_pressed("button_k"):
-				if !note_2.playing:
-					note_2.play()
-					note_1.stop()
+		if Input.is_action_pressed("button_s"):
+				if !Elow.playing:
+					Elow.play()
+					Flow.stop()
 					MouseTemp.hide()
 				if acerto0:
 					Mouse2.show()
-	if time == 1455:
+	if time == 1655:
 		MouseTemp.hide()
 		
 	time += 1

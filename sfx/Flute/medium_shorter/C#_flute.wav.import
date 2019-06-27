@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/C#_flute.wav-2d9fb6933de95dc054fce8210bd6705f.sample"
+
+[deps]
+
+source_file="res://sfx/Flute/medium_shorter/C#_flute.wav"
+dest_files=[ "res://.import/C#_flute.wav-2d9fb6933de95dc054fce8210bd6705f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

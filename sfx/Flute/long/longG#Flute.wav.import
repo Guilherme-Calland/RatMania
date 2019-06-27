@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/longG#Flute.wav-0b1d82a3b14a6abf9266e9f9049457be.sample"
+
+[deps]
+
+source_file="res://sfx/Flute/long/longG#Flute.wav"
+dest_files=[ "res://.import/longG#Flute.wav-0b1d82a3b14a6abf9266e9f9049457be.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
