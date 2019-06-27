@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/FluteSong.gd" type="Script" id=2]
@@ -6,22 +6,26 @@
 [ext_resource path="res://Music/TarantellaX1.2.wav" type="AudioStream" id=4]
 [ext_resource path="res://Music/TarantellaX1.4.wav" type="AudioStream" id=5]
 [ext_resource path="res://Music/TarantellaX2.wav" type="AudioStream" id=6]
-[ext_resource path="res://sfx/FluteNotes/FluteNote_Short/C.wav" type="AudioStream" id=7]
-[ext_resource path="res://sfx/FluteNotes/FluteNote_Short/A.wav" type="AudioStream" id=8]
-[ext_resource path="res://sfx/FluteNotes/FluteNote_Short/D.wav" type="AudioStream" id=9]
-[ext_resource path="res://sfx/FluteNotes/FluteNote_Short/F#.wav" type="AudioStream" id=10]
-[ext_resource path="res://sfx/FluteNotes/FluteNote_Short/C8.wav" type="AudioStream" id=11]
-[ext_resource path="res://scripts/Flute.gd" type="Script" id=12]
-[ext_resource path="res://SPRITES/FLAUTA/FLAUTA 1.png" type="Texture" id=13]
-[ext_resource path="res://scripts/Mouse.gd" type="Script" id=14]
-[ext_resource path="res://sfx/squeek.wav" type="AudioStream" id=15]
-[ext_resource path="res://sfx/squaak.wav" type="AudioStream" id=16]
-[ext_resource path="res://SPRITES/RATINHO/RATINHO_ENCONTRO.png" type="Texture" id=17]
-[ext_resource path="res://SPRITES/RATINHO/RATINHO.png" type="Texture" id=18]
-[ext_resource path="res://scripts/Scenary.gd" type="Script" id=19]
-[ext_resource path="res://SPRITES/BACKGROUND SCROLL/background2.jpg" type="Texture" id=20]
-[ext_resource path="res://SPRITES/BACKGROUND/background.jpg" type="Texture" id=21]
-[ext_resource path="res://SPRITES/TILE SCROLL/TILEx16.png" type="Texture" id=22]
+[ext_resource path="res://sfx/FluteNotes/C.wav" type="AudioStream" id=7]
+[ext_resource path="res://sfx/FluteNotes/A.wav" type="AudioStream" id=8]
+[ext_resource path="res://sfx/FluteNotes/D.wav" type="AudioStream" id=9]
+[ext_resource path="res://sfx/FluteNotes/F#.wav" type="AudioStream" id=10]
+[ext_resource path="res://sfx/FluteNotes/C8.wav" type="AudioStream" id=11]
+[ext_resource path="res://sfx/FluteNotes/note_1.wav" type="AudioStream" id=12]
+[ext_resource path="res://sfx/FluteNotes/note_2.wav" type="AudioStream" id=13]
+[ext_resource path="res://scripts/Flute.gd" type="Script" id=14]
+[ext_resource path="res://SPRITES/FLAUTA/FLAUTA 1.png" type="Texture" id=15]
+[ext_resource path="res://scripts/Mouse.gd" type="Script" id=16]
+[ext_resource path="res://sfx/squeek.wav" type="AudioStream" id=17]
+[ext_resource path="res://sfx/squaak.wav" type="AudioStream" id=18]
+[ext_resource path="res://SPRITES/RATINHO/RATINHO_ENCONTRO.png" type="Texture" id=19]
+[ext_resource path="res://SPRITES/RATINHO/RATINHO.png" type="Texture" id=20]
+[ext_resource path="res://scripts/Scenary.gd" type="Script" id=21]
+[ext_resource path="res://SPRITES/BACKGROUND SCROLL/background2.jpg" type="Texture" id=22]
+[ext_resource path="res://SPRITES/BACKGROUND/background.jpg" type="Texture" id=23]
+[ext_resource path="res://SPRITES/TILE SCROLL/TILEx16.png" type="Texture" id=24]
+[ext_resource path="res://SPRITES/TECLADO/S.png" type="Texture" id=25]
+[ext_resource path="res://SPRITES/TECLADO/K.png" type="Texture" id=26]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 1101.9, 949.667 )
@@ -50,7 +54,7 @@ volume_db = -35.0
 [node name="C" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 7 )
 volume_db = -35.0
-pitch_scale = 2.0
+pitch_scale = 4.0
 
 [node name="A" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 8 )
@@ -92,32 +96,40 @@ stream = ExtResource( 10 )
 volume_db = -35.0
 pitch_scale = 1.88
 
+[node name="note_1" type="AudioStreamPlayer" parent="FluteSong"]
+stream = ExtResource( 12 )
+volume_db = -30.0
+
+[node name="note_2" type="AudioStreamPlayer" parent="FluteSong"]
+stream = ExtResource( 13 )
+volume_db = -30.0
+
 [node name="Flute" type="Node2D" parent="."]
 editor/display_folded = true
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 
 [node name="Flute" type="Sprite" parent="Flute"]
 position = Vector2( -800.707, -622.419 )
 scale = Vector2( 0.131933, 0.113524 )
 z_index = 1
-texture = ExtResource( 13 )
+texture = ExtResource( 15 )
 
 [node name="Mouse" type="Node2D" parent="."]
 editor/display_folded = true
 position = Vector2( -211.669, -275.17 )
 z_index = 2
-script = ExtResource( 14 )
+script = ExtResource( 16 )
 
 [node name="MouseTemp" type="Node2D" parent="Mouse"]
 editor/display_folded = true
 position = Vector2( 1.01544, 2.03137 )
 
 [node name="Squeek" type="AudioStreamPlayer" parent="Mouse/MouseTemp"]
-stream = ExtResource( 15 )
+stream = ExtResource( 17 )
 volume_db = -35.0
 
 [node name="Squaak" type="AudioStreamPlayer" parent="Mouse/MouseTemp"]
-stream = ExtResource( 16 )
+stream = ExtResource( 18 )
 volume_db = -35.0
 
 [node name="MouseTemp" type="Sprite" parent="Mouse/MouseTemp"]
@@ -125,7 +137,7 @@ visible = false
 position = Vector2( -344.659, -272.417 )
 scale = Vector2( 0.103729, 0.11135 )
 z_index = 1
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 flip_h = true
 
 [node name="Mice" type="Node2D" parent="Mouse"]
@@ -134,29 +146,29 @@ flip_h = true
 visible = false
 position = Vector2( -755.619, -274.696 )
 scale = Vector2( 0.108836, 0.103433 )
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 
 [node name="Mouse1" type="Sprite" parent="Mouse/Mice"]
 visible = false
 position = Vector2( -779.862, -252.407 )
 scale = Vector2( 0.106178, 0.109612 )
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 
 [node name="Mouse2" type="Sprite" parent="Mouse/Mice"]
 visible = false
 position = Vector2( -722.115, -245.34 )
 scale = Vector2( 0.104523, 0.107904 )
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 
 [node name="Mouse3" type="Sprite" parent="Mouse/Mice"]
 visible = false
 position = Vector2( -830.742, -236.781 )
 scale = Vector2( 0.105741, 0.112065 )
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 
 [node name="Scenary" type="Node2D" parent="."]
 editor/display_folded = true
-script = ExtResource( 19 )
+script = ExtResource( 21 )
 
 [node name="Background" type="Node2D" parent="Scenary"]
 editor/display_folded = true
@@ -166,20 +178,35 @@ position = Vector2( -1101.9, -949.667 )
 position = Vector2( 506.975, 239.549 )
 scale = Vector2( 0.562148, 0.242584 )
 z_index = -2
-texture = ExtResource( 20 )
-normal_map = ExtResource( 21 )
+texture = ExtResource( 22 )
+normal_map = ExtResource( 23 )
 
 [node name="Background1" type="Sprite" parent="Scenary/Background"]
 position = Vector2( 1503.29, 240.086 )
 scale = Vector2( 0.563012, 0.243782 )
 z_index = -2
-texture = ExtResource( 20 )
+texture = ExtResource( 22 )
 flip_h = true
 
 [node name="Tile" type="Node2D" parent="Scenary"]
+editor/display_folded = true
 
 [node name="Tile" type="Sprite" parent="Scenary/Tile"]
 position = Vector2( -457.039, -507.321 )
 scale = Vector2( 0.240909, 0.246756 )
 z_index = -1
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
+
+[node name="Keys" type="Node2D" parent="."]
+
+[node name="S" type="Sprite" parent="Keys"]
+visible = false
+position = Vector2( -947.705, -669.028 )
+scale = Vector2( 0.665653, 0.679668 )
+texture = ExtResource( 25 )
+
+[node name="K" type="Sprite" parent="Keys"]
+visible = false
+position = Vector2( -636.094, -670.866 )
+scale = Vector2( 0.697496, 0.695684 )
+texture = ExtResource( 26 )
