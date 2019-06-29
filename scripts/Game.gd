@@ -105,13 +105,15 @@ func _process(delta):
 						if !E.playing:
 							E.play()
 							MouseTemp.hide()
-							Mouse0.show()
+							Mouse.getMouse(score).show()
+							score += 1
 				elif randNum == 1:
 					if Input.is_action_pressed("button_k"):
 						if !A.playing:
 							A.play()
 							MouseTemp.hide()
-							Mouse0.show()
+							Mouse.getMouse(score).show()
+							score += 1
 			if elapsedMod  >= 1700 && elapsedMod <= 1800:
 				MouseTemp.hide()
 				randLock = false
