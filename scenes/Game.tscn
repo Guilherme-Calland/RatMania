@@ -119,7 +119,6 @@ texture = ExtResource( 17 )
 flip_h = true
 
 [node name="Mice" type="Node2D" parent="Mouse"]
-editor/display_folded = true
 position = Vector2( -129.812, -79.6764 )
 scale = Vector2( 0.65228, 0.690247 )
 
