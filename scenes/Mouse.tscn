@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/Mouse.gd" type="Script" id=1]
+[ext_resource path="res://SPRITES/RATINHO/RATINHO.png" type="Texture" id=2]
+[ext_resource path="res://SPRITES/RATINHO/RATINHO_INCL.png" type="Texture" id=3]
+[ext_resource path="res://sfx/squeek.wav" type="AudioStream" id=4]
+[ext_resource path="res://sfx/squaak.wav" type="AudioStream" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "fidget",
+"speed": 8.0
+} ]
+
+[node name="Mouse" type="KinematicBody2D"]
+position = Vector2( 301.381, 226.036 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+animation = "fidget"
+
+[node name="Squeek" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Squaak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )

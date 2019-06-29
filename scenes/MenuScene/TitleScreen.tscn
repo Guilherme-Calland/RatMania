@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/MenuScene/startGame.gd" type="Script" id=1]
+[ext_resource path="res://SPRITES/MENU/Webp.net-resizeimage (1).png" type="Texture" id=2]
+[ext_resource path="res://scenes/MenuScene/buttons/StartButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SPRITES/BACKGROUND_SCROLL/background2.jpg" type="Texture" id=4]
+[ext_resource path="res://SPRITES/BACKGROUND/background.jpg" type="Texture" id=5]
+[ext_resource path="res://SPRITES/TILE_SCROLL/TILEx16.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Flute.tscn" type="PackedScene" id=7]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -31.0
+margin_right = -1.0
+margin_bottom = -31.0
+script = ExtResource( 1 )
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 50.0
+margin_top = 80.0
+margin_right = 590.0
+margin_bottom = 450.0
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 540.0
+margin_bottom = 179.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 183.0
+margin_right = 540.0
+margin_bottom = 370.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 540.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StartButton2" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( -0.80603, 29.9269 )
+
+[node name="Background0" type="Sprite" parent="Background"]
+position = Vector2( 507.975, 238.549 )
+scale = Vector2( 0.562148, 0.242584 )
+z_index = -2
+texture = ExtResource( 4 )
+normal_map = ExtResource( 5 )
+
+[node name="Background1" type="Sprite" parent="Background"]
+position = Vector2( 1503.29, 240.086 )
+scale = Vector2( 0.563012, 0.243782 )
+z_index = -2
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="Tile" type="Node2D" parent="."]
+
+[node name="Tile" type="Sprite" parent="Tile"]
+position = Vector2( 644.055, 472.273 )
+scale = Vector2( 0.240909, 0.246756 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Flute" parent="." instance=ExtResource( 7 )]
+position = Vector2( 287.95, 361.807 )
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartButton2" to="." method="_on_StartButton2_pressed"]

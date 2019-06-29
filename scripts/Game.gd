@@ -1,5 +1,7 @@
 extends Node2D
 
+export (PackedScene) var Mouse
+
 #tempo
 var time = 0
 #velocidade
@@ -8,14 +10,14 @@ var speed = 2
 var score = 0
 
 #ratos
-onready var MouseTemp = $Mouse/MouseTemp/MouseTemp
-onready var Mouse0 = $Mouse/Mice/Mouse0
-onready var Mouse1 = $Mouse/Mice/Mouse1
-onready var Mouse2 = $Mouse/Mice/Mouse2
-onready var Mouse3 = $Mouse/Mice/Mouse3
+var MouseTemp
+var Mouse0
+var Mouse1
+var Mouse2
+var Mouse3 
 
-onready var squeek = $Mouse/MouseTemp/Squeek
-onready var squaak = $Mouse/MouseTemp/Squaak
+#onready var squeek = $Mouse/MouseTemp/Squeek
+#onready var squaak = $Mouse/MouseTemp/Squaak
 
 onready var flute_song100 = $FluteSong/FluteSong100
 onready var note_1 = $FluteSong/note_1
@@ -45,22 +47,41 @@ onready var acerto1 = false
 
 func _ready():
 	set_process(true)
+	MouseTemp = Mouse.instance()
+	MouseTemp.position = Vector2(-556.328, -547.587)
+	MouseTemp.set_flipped(true)
+	add_child(MouseTemp)
+	
+	Mouse0 = Mouse.instance()
+	Mouse0.position = Vector2(-967.288, -549.866)
+	add_child(Mouse0)
+	
+	Mouse1 = Mouse.instance()
+	Mouse1.position = Vector2(-991.531, -527.577)
+	add_child(Mouse1)
+	
+	Mouse2 = Mouse.instance()
+	Mouse2.position = Vector2(-933.784, -520.51)
+	add_child(Mouse2)
+	
+	Mouse3 = Mouse.instance()
+	Mouse3.position = Vector2(-1042.411, -511.951)
+	add_child(Mouse3)
+	
 	time_start = OS.get_unix_time()
 
 func _process(delta):
 	var time_now = OS.get_unix_time()
 	elapsed = time_now - time_start
 	$Scenary.scenaryRoll(speed)
-	$Flute.fluteMovement(speed)
-	$Mouse.mouseMovement(speed, score)
 	$FluteSong.playFluteSong(score)
-	
+	time = elapsed + 30
 	#tutorial################
 	if time == 30:
 		S.show()
 	if time == 55:
 		MouseTemp.show()
-		squeek.play()
+		MouseTemp.squeek()
 	if time == 90:
 		S.texture = S_pressed_text
 		E.play()
@@ -74,7 +95,7 @@ func _process(delta):
 		K.show()
 	if time == 175:
 		MouseTemp.show()
-		squaak.play()
+		MouseTemp.squaak()
 	if time == 210:
 		K.texture = K_pressed_text
 		A.play()
@@ -87,7 +108,7 @@ func _process(delta):
 	#1o rato
 	if time == 535:
 		MouseTemp.show()
-		squeek.play()
+		MouseTemp.squeek()
 	if time >= 565 && time <= 575:
 		if Input.is_action_pressed("button_s"):
 			if !E.playing:
@@ -100,7 +121,7 @@ func _process(delta):
 	#2o rato
 	if time == 655:
 		MouseTemp.show()
-		squaak.play()
+		MouseTemp.squaak()
 	if time >= 680 && time <= 690:
 		if Input.is_action_pressed("button_k"):
 			if !A.playing:
@@ -116,9 +137,9 @@ func _process(delta):
 		K.show()
 	if time == 1015:
 		MouseTemp.show()
-		squaak.play()
+		MouseTemp.squaak()
 	if time == 1045:
-		squeek.play()
+		MouseTemp.squeek()
 	
 	if time == 1160:
 		MouseTemp.hide()
@@ -138,9 +159,9 @@ func _process(delta):
 	#3o rato
 	if time == 1500:
 		MouseTemp.show()
-		squaak.play()
+		MouseTemp.squaak()
 	if time == 1530:
-		squeek.play()
+		MouseTemp.squeek()
 	
 	if time >= 1630 && time <= 1640:
 		if Input.is_action_pressed("button_k"):

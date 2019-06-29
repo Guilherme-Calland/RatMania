@@ -3,5 +3,6 @@
 [ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=1]
 
 [node name="main" type="Node"]
+editor/display_folded = true
 
 [node name="Game" parent="." instance=ExtResource( 1 )]
