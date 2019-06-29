@@ -1,7 +1,5 @@
 extends Node2D
 
-var mouseCount = 0
-
 onready var mouse_text_0 = preload("res://SPRITES/RATINHO/RATINHO.png")
 onready var mouse_text_1 = preload("res://SPRITES/RATINHO/RATINHO_INCL.png")
 
@@ -21,10 +19,9 @@ onready var squeek = $MouseTemp/Squeek
 onready var squaak = $MouseTemp/Squaak
 
 
-func mouseMovement(speed, score):
-	if mouseCount >= 120:
-		mouseCount = 0
-	if mouseCount < 60:
+func mouseMovement(elapsed):
+	var elapsedMod = elapsed%1000
+	if elapsedMod >= 0 && elapsedMod <=100:
 		MouseTemp.texture = mouse_text_0
 		Mouse0.texture = mouse_text_0
 		Mouse1.texture = mouse_text_1
@@ -36,8 +33,7 @@ func mouseMovement(speed, score):
 		Mouse7.texture = mouse_text_1
 		Mouse8.texture = mouse_text_0
 		Mouse9.texture = mouse_text_1
-		
-	else:
+	elif elapsedMod >=500 && elapsedMod <= 600:
 		MouseTemp.texture = mouse_text_1
 		Mouse0.texture = mouse_text_1
 		Mouse1.texture = mouse_text_0
@@ -49,7 +45,6 @@ func mouseMovement(speed, score):
 		Mouse7.texture = mouse_text_0
 		Mouse8.texture = mouse_text_1
 		Mouse9.texture = mouse_text_0
-	mouseCount = mouseCount + speed
 	
 func getMouse(score):
 	if score == 0:

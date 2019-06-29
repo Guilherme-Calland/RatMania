@@ -79,8 +79,8 @@ func _process(delta):
 	
 	print(elapsed)
 	Scenary.scenaryRoll(speed)
-	Flute.fluteMovement(speed)
-	Mouse.mouseMovement(speed, score)
+	Flute.fluteMovement(elapsed)
+	Mouse.mouseMovement(elapsed)
 	
 	if !firstTutOver:
 		#firstTutOver faz com que o tutorial rode apenas uma vez
@@ -91,11 +91,12 @@ func _process(delta):
 			var elapsedMod = elapsed%2000
 			if elapsedMod >= 1000 && elapsedMod <= 1100 && !randLock:
 				randNum = randi()%2+0 #numero randomico 0 ou 1 
-				MouseTemp.show()
 				if randNum == 0:
+					MouseTemp.show()
 					if !squeek.playing:
 						squeek.play()
 				if randNum == 1:
+					MouseTemp.show()
 					if !squaak.playing:
 						squaak.play()
 				randLock = true
