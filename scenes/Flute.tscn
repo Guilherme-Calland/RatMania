@@ -21,6 +21,9 @@ animations = [ {
 [node name="Flute" type="KinematicBody2D"]
 position = Vector2( 305.531, 244.015 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.1, 0.1 )

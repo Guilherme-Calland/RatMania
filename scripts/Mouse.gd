@@ -1,35 +1,22 @@
-extends Node2D
+extends KinematicBody2D
 
-var mouseCount = 0
+var flipped = false
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	hide()
+	$AnimatedSprite.animation = "fidget"
 
-onready var mouse_text_0 = preload("res://SPRITES/RATINHO/RATINHO.png")
-onready var mouse_text_1 = preload("res://SPRITES/RATINHO/RATINHO_INCL.png")
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	$AnimatedSprite.flip_h = flipped
+	$AnimatedSprite.play()
 
-onready var MouseTemp = $MouseTemp/MouseTemp
-onready var Mouse0 = $Mice/Mouse0
-onready var Mouse1 = $Mice/Mouse1
-onready var Mouse2 = $Mice/Mouse2
-onready var Mouse3 = $Mice/Mouse3
+func set_flipped(b):
+	flipped = b
 
-onready var squeek = $MouseTemp/Squeek
-onready var squaak = $MouseTemp/Squaak
+func squeek():
+	$Squeek.play()
 
+func squaak():
+	$Squaak.play()
 
-func mouseMovement(speed, score):
-	if mouseCount >= 120:
-		mouseCount = 0
-	if mouseCount < 60:
-		MouseTemp.texture = mouse_text_0
-		Mouse0.texture = mouse_text_0
-		Mouse1.texture = mouse_text_1
-		Mouse2.texture = mouse_text_0
-		Mouse3.texture = mouse_text_1
-		
-	else:
-		MouseTemp.texture = mouse_text_1
-		Mouse0.texture = mouse_text_1
-		Mouse1.texture = mouse_text_0
-		Mouse2.texture = mouse_text_1
-		Mouse3.texture = mouse_text_0
-	mouseCount = mouseCount + speed
-	pass

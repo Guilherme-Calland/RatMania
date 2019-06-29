@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scenes/Mouse.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Mouse.gd" type="Script" id=1]
 [ext_resource path="res://SPRITES/RATINHO/RATINHO.png" type="Texture" id=2]
 [ext_resource path="res://SPRITES/RATINHO/RATINHO_INCL.png" type="Texture" id=3]
 [ext_resource path="res://sfx/squeek.wav" type="AudioStream" id=4]
