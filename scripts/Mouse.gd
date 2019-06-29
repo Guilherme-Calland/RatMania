@@ -47,25 +47,26 @@ func mouseMovement(elapsed):
 		Mouse9.texture = mouse_text_0
 	
 func getMouse(score):
-	if score == 0:
-		return Mouse0
-	elif score == 1:
-		return Mouse1
-	elif score == 2:
-		return Mouse2
-	elif score == 3:
-		return Mouse3
-	elif score == 4:
-		return Mouse4
-	elif score == 5:
-		return Mouse5
-	elif score == 6:
-		return Mouse6
-	elif score == 7:
-		return Mouse7
-	elif score == 8:
-		return Mouse8
-	elif score == 9:
-		return Mouse9
-	else:
-		 return Mouse0
+	match score:
+		0:
+			return Mouse0
+		1:
+			return Mouse1
+		2:
+			return Mouse2
+		3:
+			return Mouse3
+		4:
+			return Mouse4
+		5:
+			return Mouse5
+		6:
+			return Mouse6
+		7:
+			return Mouse7
+		8:
+			return Mouse8
+		9:
+			return Mouse9
+		_:
+			return Mouse0

@@ -62,7 +62,7 @@ func _process(delta):
 		firstTutOver = Tutorial.first_tutorial(elapsed)
 	
 	if firstTutOver:
-		if score <= 10:
+		if score < 10:
 			var elapsedMod = elapsed%2000
 			if elapsedMod >= 1000 && elapsedMod <= 1100 && !randLock:
 				randNum = randi()%2+0 #numero randomico 0 ou 1 
