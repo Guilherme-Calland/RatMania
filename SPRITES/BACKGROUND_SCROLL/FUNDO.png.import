@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FUNDO.png-30c179c751c7afc942b4dafb1adcae3a.stex"
+path="res://.import/FUNDO.png-9cb856a91944e1d3182edd782aa2bacd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITES/BACKGROUND SCROLL/FUNDO.png"
-dest_files=[ "res://.import/FUNDO.png-30c179c751c7afc942b4dafb1adcae3a.stex" ]
+source_file="res://SPRITES/BACKGROUND_SCROLL/FUNDO.png"
+dest_files=[ "res://.import/FUNDO.png-9cb856a91944e1d3182edd782aa2bacd.stex" ]
 
 [params]
 

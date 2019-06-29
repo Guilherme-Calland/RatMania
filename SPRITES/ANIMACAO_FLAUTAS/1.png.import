@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1.png-acc7002b9958ea47aaa010d8eee4dce7.stex"
+path="res://.import/1.png-2f443f400eba825b3c150d07779a1c9b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITES/ANIMAÇAO FLAUTAS/1.png"
-dest_files=[ "res://.import/1.png-acc7002b9958ea47aaa010d8eee4dce7.stex" ]
+source_file="res://SPRITES/ANIMACAO_FLAUTAS/1.png"
+dest_files=[ "res://.import/1.png-2f443f400eba825b3c150d07779a1c9b.stex" ]
 
 [params]
 

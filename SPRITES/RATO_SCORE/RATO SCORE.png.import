@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RATO SCORE.png-321ab8213380a5aa640297043947d016.stex"
+path="res://.import/RATO SCORE.png-c5fc5977df908e421fcb066769669464.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITES/RATO SCORE/RATO SCORE.png"
-dest_files=[ "res://.import/RATO SCORE.png-321ab8213380a5aa640297043947d016.stex" ]
+source_file="res://SPRITES/RATO_SCORE/RATO SCORE.png"
+dest_files=[ "res://.import/RATO SCORE.png-c5fc5977df908e421fcb066769669464.stex" ]
 
 [params]
 
