@@ -1,27 +1,11 @@
 extends Node2D
 
-
 #velocidade
 var speed = 2
 #pontuacao
 var score = 0
-#
-
-
-#ratos
 
 onready var MouseTemp = $Mouse/MouseTemp/MouseTemp
-onready var Mouse0 = $Mouse/Mice/Mouse0
-onready var Mouse1 = $Mouse/Mice/Mouse1
-onready var Mouse2 = $Mouse/Mice/Mouse2
-onready var Mouse3 = $Mouse/Mice/Mouse3
-onready var Mouse4 = $Mouse/Mice/Mouse4
-onready var Mouse5 = $Mouse/Mice/Mouse5
-onready var Mouse6 = $Mouse/Mice/Mouse6
-onready var Mouse7 = $Mouse/Mice/Mouse7
-onready var Mouse8 = $Mouse/Mice/Mouse8
-onready var Mouse9 = $Mouse/Mice/Mouse9
-#
 onready var squeek = $Mouse/MouseTemp/Squeek
 onready var squaak = $Mouse/MouseTemp/Squaak
 
@@ -40,15 +24,6 @@ onready var Scenary = $Scenary
 onready var Flute = $Flute
 onready var FluteSong = $FluteSong
 onready var Mouse = $Mouse
-
-onready var S = $Keys/S
-onready var K = $Keys/K
-
-onready var S_text = preload("res://SPRITES/TECLADO/S.png")
-onready var S_pressed_text = preload("res://SPRITES/TECLADO/S_pressed.png")
-onready var K_text = preload("res://SPRITES/TECLADO/K.png")
-onready var K_pressed_text = preload("res://SPRITES/TECLADO/K_pressed.png")
-
 
 var time_start = 0
 var elapsed = 0
