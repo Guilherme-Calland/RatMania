@@ -57,7 +57,6 @@ func _process(delta):
 	
 	elapsed = time_now - time_start
 	
-	print(elapsed)
 	Scenary.scenaryRoll(speed)
 	Flute.fluteMovement(elapsed)
 	Mouse.mouseMovement(elapsed)
