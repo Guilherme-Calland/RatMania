@@ -3,7 +3,10 @@ extends Node2D
 #velocidade
 var speed = 2
 #pontuacao
-var score = 0
+var score = 1
+#volume
+var volume = -10
+
 
 onready var MouseTemp = $Mouse/MouseTemp/MouseTemp
 onready var squeek = $Mouse/MouseTemp/Squeek
@@ -32,6 +35,7 @@ var acerto1 = false
 var firstTutOver = false
 var randNum = 0
 var randLock = false
+var randLock2 = false
 
 func _ready():
 	set_process(true)
@@ -40,7 +44,7 @@ func _ready():
 	
 	#funcao que seta o volume de todos os nódulos de audio
 	#cuidado se voce estiver com fone, volume > 0 é bem alto.
-	$FluteSong.set_global_volume(-10)
+	$FluteSong.set_global_volume(volume)
 
 func _process(delta):
 	var time_now = OS.get_ticks_msec()
@@ -83,6 +87,7 @@ func _process(delta):
 							MouseTemp.hide()
 							score += 1
 							Mouse.getMouse(score).show()
+							acerto0 = true
 				elif randNum == 1:
 					if Input.is_action_pressed("button_k"):
 						if !A.playing:
@@ -90,10 +95,18 @@ func _process(delta):
 							MouseTemp.hide()
 							score += 1
 							Mouse.getMouse(score).show()
+							acerto0 = true
 			if elapsedMod  >= 1700 && elapsedMod <= 1800:
 				MouseTemp.hide()
+				if !acerto0 && !randLock2:
+					Mouse.getMouse(score).hide()
+					score -= 1
+					Mouse.getMouse(score)
+					randLock2 = true
+			if elapsedMod >= 1800 && elapsedMod <= 1900:
+				acerto0 = false
 				randLock = false
+				randLock2 = false
 				
-					
 			
 	

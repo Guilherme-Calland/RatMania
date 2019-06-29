@@ -18,7 +18,7 @@
 [ext_resource path="res://sfx/squaak.wav" type="AudioStream" id=16]
 [ext_resource path="res://SPRITES/RATINHO/RATINHO_ENCONTRO.png" type="Texture" id=17]
 [ext_resource path="res://SPRITES/RATINHO/RATINHO.png" type="Texture" id=18]
-[ext_resource path="res://SPRITES/RATO SCORE/RATO SCORE_00.png" type="Texture" id=19]
+[ext_resource path="res://SPRITES/RATO SCORE/RATO SCORE_01.png" type="Texture" id=19]
 [ext_resource path="res://scripts/Scenary.gd" type="Script" id=20]
 [ext_resource path="res://SPRITES/BACKGROUND SCROLL/background2.jpg" type="Texture" id=21]
 [ext_resource path="res://SPRITES/BACKGROUND/background.jpg" type="Texture" id=22]
@@ -116,18 +116,10 @@ texture = ExtResource( 17 )
 flip_h = true
 
 [node name="Mice" type="Node2D" parent="Mouse"]
-editor/display_folded = true
 position = Vector2( -129.812, -79.6764 )
 scale = Vector2( 0.65228, 0.690247 )
 
-[node name="Mouse0" type="Sprite" parent="Mouse/Mice"]
-visible = false
-position = Vector2( -752.252, -276.87 )
-scale = Vector2( 0.108836, 0.103433 )
-texture = ExtResource( 18 )
-
 [node name="Mouse1" type="Sprite" parent="Mouse/Mice"]
-visible = false
 position = Vector2( -797.81, -252.84 )
 scale = Vector2( 0.106178, 0.109612 )
 texture = ExtResource( 18 )
@@ -189,6 +181,13 @@ scale = Vector2( 0.105741, 0.112065 )
 z_index = -2
 texture = ExtResource( 18 )
 centered = false
+
+[node name="Mouse10" type="Sprite" parent="Mouse/Mice"]
+visible = false
+position = Vector2( -752.252, -276.87 )
+scale = Vector2( 0.108836, 0.103433 )
+z_index = -1
+texture = ExtResource( 18 )
 
 [node name="Score" type="Sprite" parent="Mouse"]
 position = Vector2( -625.15, -562.241 )
