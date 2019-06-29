@@ -110,5 +110,6 @@ func _process(delta):
 				randLock = false
 				randLock2 = false
 				
+				
 			
 	
