@@ -51,7 +51,6 @@ func _process(delta):
 	var time_now = OS.get_unix_time()
 	elapsed = time_now - time_start
 	$Scenary.scenaryRoll(speed)
-	$Flute.fluteMovement(speed)
 	$Mouse.mouseMovement(speed, score)
 	$FluteSong.playFluteSong(score)
 	

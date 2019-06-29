@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/FluteSong.gd" type="Script" id=2]
@@ -11,19 +11,18 @@
 [ext_resource path="res://sfx/Flute/medium/mediumF#Flute.wav" type="AudioStream" id=9]
 [ext_resource path="res://sfx/Flute/medium/mediumG#Flute.wav" type="AudioStream" id=10]
 [ext_resource path="res://sfx/Flute/medium_shorter/Flow_flute.wav" type="AudioStream" id=11]
-[ext_resource path="res://scripts/Flute.gd" type="Script" id=12]
-[ext_resource path="res://SPRITES/FLAUTA/FLAUTA 1.png" type="Texture" id=13]
-[ext_resource path="res://scripts/Mouse.gd" type="Script" id=14]
-[ext_resource path="res://sfx/squeek.wav" type="AudioStream" id=15]
-[ext_resource path="res://sfx/squaak.wav" type="AudioStream" id=16]
-[ext_resource path="res://SPRITES/RATINHO/RATINHO_ENCONTRO.png" type="Texture" id=17]
-[ext_resource path="res://SPRITES/RATINHO/RATINHO.png" type="Texture" id=18]
-[ext_resource path="res://scripts/Scenary.gd" type="Script" id=19]
-[ext_resource path="res://SPRITES/BACKGROUND SCROLL/background2.jpg" type="Texture" id=20]
-[ext_resource path="res://SPRITES/BACKGROUND/background.jpg" type="Texture" id=21]
-[ext_resource path="res://SPRITES/TILE SCROLL/TILEx16.png" type="Texture" id=22]
-[ext_resource path="res://SPRITES/TECLADO/S.png" type="Texture" id=23]
-[ext_resource path="res://SPRITES/TECLADO/K.png" type="Texture" id=24]
+[ext_resource path="res://scenes/Flute.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scripts/Mouse.gd" type="Script" id=13]
+[ext_resource path="res://sfx/squeek.wav" type="AudioStream" id=14]
+[ext_resource path="res://sfx/squaak.wav" type="AudioStream" id=15]
+[ext_resource path="res://SPRITES/RATINHO/RATINHO_ENCONTRO.png" type="Texture" id=16]
+[ext_resource path="res://SPRITES/RATINHO/RATINHO.png" type="Texture" id=17]
+[ext_resource path="res://scripts/Scenary.gd" type="Script" id=18]
+[ext_resource path="res://SPRITES/BACKGROUND SCROLL/background2.jpg" type="Texture" id=19]
+[ext_resource path="res://SPRITES/BACKGROUND/background.jpg" type="Texture" id=20]
+[ext_resource path="res://SPRITES/TILE SCROLL/TILEx16.png" type="Texture" id=21]
+[ext_resource path="res://SPRITES/TECLADO/S.png" type="Texture" id=22]
+[ext_resource path="res://SPRITES/TECLADO/K.png" type="Texture" id=23]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 1101.9, 949.667 )
@@ -75,31 +74,23 @@ stream = ExtResource( 8 )
 volume_db = -35.0
 pitch_scale = 0.5
 
-[node name="Flute" type="Node2D" parent="."]
-script = ExtResource( 12 )
-
-[node name="Flute" type="Sprite" parent="Flute"]
-position = Vector2( -800.707, -622.419 )
-scale = Vector2( 0.131933, 0.113524 )
-z_index = 1
-texture = ExtResource( 13 )
+[node name="Flute" parent="." instance=ExtResource( 12 )]
+position = Vector2( -794.537, -616.188 )
 
 [node name="Mouse" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -211.669, -275.17 )
 z_index = 2
-script = ExtResource( 14 )
+script = ExtResource( 13 )
 
 [node name="MouseTemp" type="Node2D" parent="Mouse"]
-editor/display_folded = true
 position = Vector2( 1.01544, 2.03137 )
 
 [node name="Squeek" type="AudioStreamPlayer" parent="Mouse/MouseTemp"]
-stream = ExtResource( 15 )
+stream = ExtResource( 14 )
 volume_db = -35.0
 
 [node name="Squaak" type="AudioStreamPlayer" parent="Mouse/MouseTemp"]
-stream = ExtResource( 16 )
+stream = ExtResource( 15 )
 volume_db = -35.0
 
 [node name="MouseTemp" type="Sprite" parent="Mouse/MouseTemp"]
@@ -107,38 +98,37 @@ visible = false
 position = Vector2( -344.659, -272.417 )
 scale = Vector2( 0.103729, 0.11135 )
 z_index = 1
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 flip_h = true
 
 [node name="Mice" type="Node2D" parent="Mouse"]
-editor/display_folded = true
 
 [node name="Mouse0" type="Sprite" parent="Mouse/Mice"]
 visible = false
 position = Vector2( -755.619, -274.696 )
 scale = Vector2( 0.108836, 0.103433 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="Mouse1" type="Sprite" parent="Mouse/Mice"]
 visible = false
 position = Vector2( -779.862, -252.407 )
 scale = Vector2( 0.106178, 0.109612 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="Mouse2" type="Sprite" parent="Mouse/Mice"]
 visible = false
 position = Vector2( -722.115, -245.34 )
 scale = Vector2( 0.104523, 0.107904 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="Mouse3" type="Sprite" parent="Mouse/Mice"]
 visible = false
 position = Vector2( -830.742, -236.781 )
 scale = Vector2( 0.105741, 0.112065 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="Scenary" type="Node2D" parent="."]
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 
 [node name="Background" type="Node2D" parent="Scenary"]
 position = Vector2( -1101.9, -949.667 )
@@ -147,14 +137,14 @@ position = Vector2( -1101.9, -949.667 )
 position = Vector2( 506.975, 239.549 )
 scale = Vector2( 0.562148, 0.242584 )
 z_index = -2
-texture = ExtResource( 20 )
-normal_map = ExtResource( 21 )
+texture = ExtResource( 19 )
+normal_map = ExtResource( 20 )
 
 [node name="Background1" type="Sprite" parent="Scenary/Background"]
 position = Vector2( 1503.29, 240.086 )
 scale = Vector2( 0.563012, 0.243782 )
 z_index = -2
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 flip_h = true
 
 [node name="Tile" type="Node2D" parent="Scenary"]
@@ -163,19 +153,18 @@ flip_h = true
 position = Vector2( -457.039, -507.321 )
 scale = Vector2( 0.240909, 0.246756 )
 z_index = -1
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 
 [node name="Keys" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="S" type="Sprite" parent="Keys"]
 visible = false
 position = Vector2( -947.705, -669.028 )
 scale = Vector2( 0.665653, 0.679668 )
-texture = ExtResource( 23 )
+texture = ExtResource( 22 )
 
 [node name="K" type="Sprite" parent="Keys"]
 visible = false
 position = Vector2( -636.094, -670.866 )
 scale = Vector2( 0.697496, 0.695684 )
-texture = ExtResource( 24 )
+texture = ExtResource( 23 )
