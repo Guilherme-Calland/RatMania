@@ -88,13 +88,13 @@ z_index = 1
 texture = ExtResource( 13 )
 
 [node name="Mouse" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -204.88, -425.893 )
 scale = Vector2( 1.19192, 1.1594 )
 z_index = 2
 script = ExtResource( 14 )
 
 [node name="MouseTemp" type="Node2D" parent="Mouse"]
+editor/display_folded = true
 position = Vector2( 1.01544, 2.03137 )
 
 [node name="Squeek" type="AudioStreamPlayer" parent="Mouse/MouseTemp"]
