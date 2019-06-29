@@ -16,8 +16,6 @@ onready var Mouse8 = $Mice/Mouse8
 onready var Mouse9 = $Mice/Mouse9
 onready var Mouse10 = $Mice/Mouse10
 
-onready var Score = $Score
-
 onready var squeek = $MouseTemp/Squeek
 onready var squaak = $MouseTemp/Squaak
 
@@ -52,37 +50,26 @@ func mouseMovement(elapsed):
 func getMouse(score):
 	match score:
 		0:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_00.png")
 			return Mouse0
 		1:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_01.png")
 			return Mouse1
 		2:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_02.png")
 			return Mouse2
 		3:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_03.png")
 			return Mouse3
 		4:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_04.png")
 			return Mouse4
 		5:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_05.png")
 			return Mouse5
 		6:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_06.png")
 			return Mouse6
 		7:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_07.png")
 			return Mouse7
 		8:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_08.png")
 			return Mouse8
 		9:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_09.png")
 			return Mouse9
 		10:
-			Score.texture = preload("res://SPRITES/RATO SCORE/RATO SCORE_10.png")
 			return Mouse10
 		_:
 			return Mouse0

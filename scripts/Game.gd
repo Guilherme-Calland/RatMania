@@ -27,6 +27,7 @@ onready var Scenary = $Scenary
 onready var Flute = $Flute
 onready var FluteSong = $FluteSong
 onready var Mouse = $Mouse
+onready var Score = $Score
 
 var time_start = 0
 var elapsed = 0
@@ -60,6 +61,7 @@ func _process(delta):
 	Scenary.scenaryRoll(speed)
 	Flute.fluteMovement(elapsed)
 	Mouse.mouseMovement(elapsed)
+	Score.setScore(score)
 	
 	if !firstTutOver:
 		#firstTutOver faz com que o tutorial rode apenas uma vez
