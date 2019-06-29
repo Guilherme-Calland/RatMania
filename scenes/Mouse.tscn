@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/MouseScene.gd" type="Script" id=1]
 [ext_resource path="res://SPRITES/RATINHO/RATINHO.png" type="Texture" id=2]
 [ext_resource path="res://SPRITES/RATINHO/RATINHO_INCL.png" type="Texture" id=3]
-[ext_resource path="res://sfx/squeek.wav" type="AudioStream" id=4]
-[ext_resource path="res://sfx/squaak.wav" type="AudioStream" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -25,9 +23,3 @@ __meta__ = {
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "fidget"
-
-[node name="Squeek" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-
-[node name="Squaak" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
