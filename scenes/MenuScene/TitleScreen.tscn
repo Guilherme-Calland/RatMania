@@ -65,7 +65,6 @@ texture = ExtResource( 4 )
 flip_h = true
 
 [node name="Flute" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 6 )
 
 [node name="Flute" type="Sprite" parent="Flute"]
@@ -75,7 +74,6 @@ z_index = 1
 texture = ExtResource( 7 )
 
 [node name="Tile" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Tile" type="Sprite" parent="Tile"]
 position = Vector2( 644.055, 472.273 )

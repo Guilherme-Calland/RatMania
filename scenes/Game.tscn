@@ -30,6 +30,8 @@
 [ext_resource path="res://SPRITES/RATO_SCORE/NUMERO_0.png" type="Texture" id=28]
 [ext_resource path="res://SPRITES/RATO_SCORE/RATO SCORE_ICONE.png" type="Texture" id=29]
 
+
+
 [node name="Game" type="Node2D"]
 editor/display_folded = true
 position = Vector2( 1101.9, 1132.98 )
