@@ -109,7 +109,6 @@ shape = SubResource( 1 )
 [node name="Mouse" parent="RatStorage/StorageZone_1" instance=ExtResource( 15 )]
 
 [node name="Mouse" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -204.88, -425.893 )
 scale = Vector2( 1.19192, 1.1594 )
 z_index = 2
