@@ -114,7 +114,6 @@ scale = Vector2( 1.19192, 1.1594 )
 z_index = 2
 
 [node name="MouseTemp" type="Node2D" parent="Mouse"]
-editor/display_folded = true
 position = Vector2( 1.01544, 2.03137 )
 
 [node name="Squeek" type="AudioStreamPlayer" parent="Mouse/MouseTemp"]
@@ -127,11 +126,10 @@ volume_db = -10.0
 
 [node name="MouseTemp" type="Sprite" parent="Mouse/MouseTemp"]
 visible = false
-position = Vector2( -207.248, -260.49 )
-scale = Vector2( 0.0753898, 0.0740246 )
+position = Vector2( -219.026, -253.763 )
+scale = Vector2( 0.0504623, 0.0482999 )
 z_index = 1
 texture = ExtResource( 18 )
-flip_h = true
 
 [node name="Scenary" type="Node2D" parent="."]
 editor/display_folded = true

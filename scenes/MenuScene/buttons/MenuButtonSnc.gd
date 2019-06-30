@@ -14,5 +14,5 @@ func _ready():
 
 
 func _on_MenuButton_pressed():
-	get_tree().change_scene("res://scenes/main.tscn")
+	get_tree().change_scene("res://scenes/MenuScene/TitleScreen.tscn")
 
