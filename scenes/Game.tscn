@@ -30,10 +30,7 @@
 [ext_resource path="res://SPRITES/RATO_SCORE/NUMERO_0.png" type="Texture" id=28]
 [ext_resource path="res://SPRITES/RATO_SCORE/RATO SCORE_ICONE.png" type="Texture" id=29]
 
-
-
 [node name="Game" type="Node2D"]
-editor/display_folded = true
 position = Vector2( 1101.9, 1132.98 )
 script = ExtResource( 1 )
 
@@ -198,9 +195,11 @@ z_index = -2
 texture = ExtResource( 18 )
 
 [node name="Scenary" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 19 )
 
 [node name="Background" type="Node2D" parent="Scenary"]
+editor/display_folded = true
 position = Vector2( -1105.97, -1132.98 )
 
 [node name="Background0" type="Sprite" parent="Scenary/Background"]
