@@ -3,7 +3,7 @@ extends Node2D
 #velocidade
 var speed = 2
 #pontuacao
-var score = 0
+var score = 1
 #volume
 var volume = -10
 
@@ -37,7 +37,6 @@ var firstTutOver = false
 var randNum = 0
 var randLock = false
 var randLock2 = false
-var gameOver = false
 
 func _ready():
 	set_process(true)
@@ -49,121 +48,71 @@ func _ready():
 	$FluteSong.set_global_volume(volume)
 
 func _process(delta):
-	if gameOver == false:
-		var time_now = OS.get_ticks_msec()
-		
-		if !flute_song.playing:
-			flute_song.play()
-			time_start = time_now + 100
-		#quando a musica recomeça reinicia o contador
-		
-		elapsed = time_now - time_start
-		
-		Scenary.scenaryRoll(speed)
-		Flute.fluteMovement(elapsed)
-		Mouse.mouseMovement(elapsed)
-		Score.setScore(score)
-		
-		if !firstTutOver:
-			#firstTutOver faz com que o tutorial rode apenas uma vez
-			firstTutOver = Tutorial.first_tutorial(elapsed)
-		
-		if firstTutOver:
-			if score < 10:
-				var elapsedMod = elapsed%2000
-				if elapsedMod >= 1000 && elapsedMod <= 1100 && !randLock:
-					randNum = randi()%2+0 #numero randomico 0 ou 1 
-					if randNum == 0:
-						MouseTemp.show()
-						if !squeek.playing:
-							squeek.play()
-					if randNum == 1:
-						MouseTemp.show()
-						if !squaak.playing:
-							squaak.play()
-					randLock = true
-				if elapsedMod >= 1400 && elapsedMod <= 1700:
-					if randNum == 0:
-						if Input.is_action_pressed("button_s"):
-							if !E.playing:
-								E.play()
-								MouseTemp.hide()
-								score += 1
-								Mouse.getMouse(score).show()
-								acerto0 = true
-					elif randNum == 1:
-						if Input.is_action_pressed("button_k"):
-							if !A.playing:
-								A.play()
-								MouseTemp.hide()
-								score += 1
-								Mouse.getMouse(score).show()
-								acerto0 = true
-				if elapsedMod  >= 1700 && elapsedMod <= 1800:
-					MouseTemp.hide()
-					if !acerto0 && !randLock2:
+	var time_now = OS.get_ticks_msec()
+	
+	if !flute_song.playing:
+		flute_song.play()
+		time_start = time_now + 100
+	#quando a musica recomeça reinicia o contador
+	
+	elapsed = time_now - time_start
+	
+	Scenary.scenaryRoll(speed)
+	Flute.fluteMovement(elapsed)
+	Mouse.mouseMovement(elapsed)
+	Score.setScore(score)
+	
+	if !firstTutOver:
+		#firstTutOver faz com que o tutorial rode apenas uma vez
+		firstTutOver = Tutorial.first_tutorial(elapsed)
+	
+	if firstTutOver:
+		if score < 10:
+			var elapsedMod = elapsed%2000
+			if elapsedMod >= 1000 && elapsedMod <= 1100 && !randLock:
+				randNum = randi()%2+0 #numero randomico 0 ou 1 
+				if randNum == 0:
+					MouseTemp.show()
+					if !squeek.playing:
+						squeek.play()
+				if randNum == 1:
+					MouseTemp.show()
+					if !squaak.playing:
+						squaak.play()
+				randLock = true
+			if elapsedMod >= 1400 && elapsedMod <= 1700:
+				if randNum == 0:
+					if Input.is_action_pressed("button_s"):
+						if !E.playing:
+							E.play()
+							MouseTemp.hide()
+							score += 1
+							Mouse.getMouse(score).show()
+							acerto0 = true
+				elif randNum == 1:
+					if Input.is_action_pressed("button_k"):
+						if !A.playing:
+							A.play()
+							MouseTemp.hide()
+							score += 1
+							Mouse.getMouse(score).show()
+							acerto0 = true
+			if elapsedMod  >= 1700 && elapsedMod <= 1800:
+				MouseTemp.hide()
+				if !acerto0 && !randLock2:
+					if Mouse.getMouse(score) != null:
 						Mouse.getMouse(score).hide()
 						score -= 1
 						Mouse.getMouse(score)
 						randLock2 = true
-				if elapsedMod >= 1800 && elapsedMod <= 1900:
-					acerto0 = false
-					randLock = false
-					randLock2 = false
-					
-								
-		if !firstTutOver:
-			#firstTutOver faz com que o tutorial rode apenas uma vez
-			firstTutOver = Tutorial.first_tutorial(elapsed)
-		
-		if firstTutOver:
-			if score < 10:
-				var elapsedMod = elapsed%2000
-				if elapsedMod >= 1000 && elapsedMod <= 1100 && !randLock:
-					randNum = randi()%2+0 #numero randomico 0 ou 1 
-					if randNum == 0:
-						MouseTemp.show()
-						if !squeek.playing:
-							squeek.play()
-					if randNum == 1:
-						MouseTemp.show()
-						if !squaak.playing:
-							squaak.play()
-					randLock = true
-				if elapsedMod >= 1400 && elapsedMod <= 1700:
-					if randNum == 0:
-						if Input.is_action_pressed("button_s"):
-							if !E.playing:
-								E.play()
-								MouseTemp.hide()
-								score += 1
-								Mouse.getMouse(score).show()
-								acerto0 = true
-					elif randNum == 1:
-						if Input.is_action_pressed("button_k"):
-							if !A.playing:
-								A.play()
-								MouseTemp.hide()
-								score += 1
-								Mouse.getMouse(score).show()
-								acerto0 = true
-				if elapsedMod  >= 1700 && elapsedMod <= 1800:
-					MouseTemp.hide()
-					if !acerto0 && !randLock2:
-						if score !=0:
-							Mouse.getMouse(score).hide()
-							score -= 1
-							Mouse.getMouse(score)
-							randLock2 = true	
-						else:
-							gameOver = true
-							get_tree().change_scene("res://scenes/gameOver.tscn")
-						
-				if elapsedMod >= 1800 && elapsedMod <= 1900:
-					acerto0 = false
-					randLock = false
-					randLock2 = false
-					
-					
+					else:
+						get_tree().change_scene("res://scenes/gameOver.tscn")
+
+			if elapsedMod >= 1800 && elapsedMod <= 1900:
+				acerto0 = false
+				randLock = false
+				randLock2 = false
 				
-		
+				
+			
+	
