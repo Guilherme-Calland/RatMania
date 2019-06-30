@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/FluteSong.gd" type="Script" id=2]
@@ -19,14 +19,21 @@
 [ext_resource path="res://SPRITES/RATINHO/RATINHO_ENCONTRO.png" type="Texture" id=17]
 [ext_resource path="res://SPRITES/RATINHO/RATINHO.png" type="Texture" id=18]
 [ext_resource path="res://scripts/Scenary.gd" type="Script" id=19]
-[ext_resource path="res://SPRITES/BACKGROUND SCROLL/background2.jpg" type="Texture" id=20]
+[ext_resource path="res://SPRITES/BACKGROUND_SCROLL/background2.jpg" type="Texture" id=20]
 [ext_resource path="res://SPRITES/BACKGROUND/background.jpg" type="Texture" id=21]
-[ext_resource path="res://SPRITES/TILE SCROLL/TILEx16.png" type="Texture" id=22]
+[ext_resource path="res://SPRITES/TILE_SCROLL/TILEx16.png" type="Texture" id=22]
 [ext_resource path="res://SPRITES/TECLADO/S.png" type="Texture" id=23]
 [ext_resource path="res://SPRITES/TECLADO/K.png" type="Texture" id=24]
+[ext_resource path="res://scripts/Tutorial.gd" type="Script" id=25]
+[ext_resource path="res://scripts/Score.gd" type="Script" id=26]
+[ext_resource path="res://SPRITES/RATO_SCORE/NUMERO_1.png" type="Texture" id=27]
+[ext_resource path="res://SPRITES/RATO_SCORE/NUMERO_0.png" type="Texture" id=28]
+[ext_resource path="res://SPRITES/RATO_SCORE/RATO SCORE_ICONE.png" type="Texture" id=29]
+
+
 
 [node name="Game" type="Node2D"]
-position = Vector2( 1101.9, 949.667 )
+position = Vector2( 1101.9, 1132.98 )
 script = ExtResource( 1 )
 
 [node name="FluteSong" type="Node2D" parent="."]
@@ -35,58 +42,61 @@ script = ExtResource( 2 )
 
 [node name="FluteSong100" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 3 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="A" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 4 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="B" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 5 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="C#" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 6 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="D" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 7 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="E" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 8 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="F#" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 9 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="G#" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 10 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="Flow" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 11 )
-volume_db = -35.0
+volume_db = -10.0
 pitch_scale = 0.5
 
 [node name="Elow" type="AudioStreamPlayer" parent="FluteSong"]
 stream = ExtResource( 8 )
-volume_db = -35.0
+volume_db = -10.0
 pitch_scale = 0.5
 
 [node name="Flute" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 258.899, 248.036 )
+scale = Vector2( 1.36647, 1.39204 )
 script = ExtResource( 12 )
 
 [node name="Flute" type="Sprite" parent="Flute"]
-position = Vector2( -800.707, -622.419 )
-scale = Vector2( 0.131933, 0.113524 )
+position = Vector2( -699.514, -740.329 )
+scale = Vector2( 0.0915817, 0.0645289 )
 z_index = 1
 texture = ExtResource( 13 )
 
 [node name="Mouse" type="Node2D" parent="."]
-editor/display_folded = true
-position = Vector2( -211.669, -275.17 )
+position = Vector2( -204.88, -425.893 )
+scale = Vector2( 1.19192, 1.1594 )
 z_index = 2
 script = ExtResource( 14 )
 
@@ -96,59 +106,108 @@ position = Vector2( 1.01544, 2.03137 )
 
 [node name="Squeek" type="AudioStreamPlayer" parent="Mouse/MouseTemp"]
 stream = ExtResource( 15 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="Squaak" type="AudioStreamPlayer" parent="Mouse/MouseTemp"]
 stream = ExtResource( 16 )
-volume_db = -35.0
+volume_db = -10.0
 
 [node name="MouseTemp" type="Sprite" parent="Mouse/MouseTemp"]
 visible = false
-position = Vector2( -344.659, -272.417 )
-scale = Vector2( 0.103729, 0.11135 )
+position = Vector2( -207.248, -260.49 )
+scale = Vector2( 0.0753898, 0.0740246 )
 z_index = 1
 texture = ExtResource( 17 )
 flip_h = true
 
 [node name="Mice" type="Node2D" parent="Mouse"]
-editor/display_folded = true
-
-[node name="Mouse0" type="Sprite" parent="Mouse/Mice"]
-visible = false
-position = Vector2( -755.619, -274.696 )
-scale = Vector2( 0.108836, 0.103433 )
-texture = ExtResource( 18 )
+position = Vector2( -129.812, -79.6764 )
+scale = Vector2( 0.65228, 0.690247 )
 
 [node name="Mouse1" type="Sprite" parent="Mouse/Mice"]
-visible = false
-position = Vector2( -779.862, -252.407 )
+position = Vector2( -797.81, -252.84 )
 scale = Vector2( 0.106178, 0.109612 )
 texture = ExtResource( 18 )
 
 [node name="Mouse2" type="Sprite" parent="Mouse/Mice"]
 visible = false
-position = Vector2( -722.115, -245.34 )
+position = Vector2( -726.5, -245.773 )
 scale = Vector2( 0.104523, 0.107904 )
 texture = ExtResource( 18 )
 
 [node name="Mouse3" type="Sprite" parent="Mouse/Mice"]
 visible = false
-position = Vector2( -830.742, -236.781 )
+position = Vector2( -838.303, -230.129 )
 scale = Vector2( 0.105741, 0.112065 )
 texture = ExtResource( 18 )
 
+[node name="Mouse4" type="Sprite" parent="Mouse/Mice"]
+visible = false
+position = Vector2( -823.435, -254.37 )
+scale = Vector2( 0.105741, 0.112065 )
+z_index = 1
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Mouse5" type="Sprite" parent="Mouse/Mice"]
+visible = false
+position = Vector2( -893.595, -285.539 )
+scale = Vector2( 0.108836, 0.103433 )
+z_index = -1
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Mouse6" type="Sprite" parent="Mouse/Mice"]
+visible = false
+position = Vector2( -752.007, -306.149 )
+scale = Vector2( 0.106178, 0.109612 )
+z_index = -1
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Mouse7" type="Sprite" parent="Mouse/Mice"]
+visible = false
+position = Vector2( -735.903, -257.566 )
+scale = Vector2( 0.104523, 0.107904 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Mouse8" type="Sprite" parent="Mouse/Mice"]
+visible = false
+position = Vector2( -885.117, -224.641 )
+scale = Vector2( 0.105741, 0.112065 )
+z_index = 2
+texture = ExtResource( 18 )
+
+[node name="Mouse9" type="Sprite" parent="Mouse/Mice"]
+visible = false
+position = Vector2( -803.302, -310.243 )
+scale = Vector2( 0.105741, 0.112065 )
+z_index = -2
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Mouse10" type="Sprite" parent="Mouse/Mice"]
+visible = false
+position = Vector2( -713.464, -308.057 )
+scale = Vector2( 0.108836, 0.103433 )
+z_index = -2
+texture = ExtResource( 18 )
+
 [node name="Scenary" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 19 )
 
 [node name="Background" type="Node2D" parent="Scenary"]
-position = Vector2( -1101.9, -949.667 )
+position = Vector2( -1105.97, -1132.98 )
 
 [node name="Background0" type="Sprite" parent="Scenary/Background"]
-position = Vector2( 506.975, 239.549 )
+position = Vector2( 560, 280 )
 scale = Vector2( 0.562148, 0.242584 )
 z_index = -2
 texture = ExtResource( 20 )
 normal_map = ExtResource( 21 )
+offset = Vector2( -94.3257, -166.751 )
 
 [node name="Background1" type="Sprite" parent="Scenary/Background"]
 position = Vector2( 1503.29, 240.086 )
@@ -160,22 +219,52 @@ flip_h = true
 [node name="Tile" type="Node2D" parent="Scenary"]
 
 [node name="Tile" type="Sprite" parent="Scenary/Tile"]
-position = Vector2( -457.039, -507.321 )
+position = Vector2( -461.112, -690.633 )
+scale = Vector2( 0.240909, 0.246756 )
+z_index = -1
+texture = ExtResource( 22 )
+
+[node name="Tile2" type="Sprite" parent="Scenary/Tile"]
+position = Vector2( 824.031, -690.483 )
 scale = Vector2( 0.240909, 0.246756 )
 z_index = -1
 texture = ExtResource( 22 )
 
 [node name="Keys" type="Node2D" parent="."]
 editor/display_folded = true
+position = Vector2( -30.7782, -14.4839 )
 
 [node name="S" type="Sprite" parent="Keys"]
 visible = false
-position = Vector2( -947.705, -669.028 )
+position = Vector2( -951.779, -852.34 )
 scale = Vector2( 0.665653, 0.679668 )
 texture = ExtResource( 23 )
 
 [node name="K" type="Sprite" parent="Keys"]
 visible = false
-position = Vector2( -636.094, -670.866 )
+position = Vector2( -417.478, -854.178 )
 scale = Vector2( 0.697496, 0.695684 )
 texture = ExtResource( 24 )
+
+[node name="Tutorial" type="Node2D" parent="."]
+script = ExtResource( 25 )
+
+[node name="Score" type="Node2D" parent="."]
+position = Vector2( -252.697, -294.813 )
+scale = Vector2( 0.762312, 0.735694 )
+script = ExtResource( 26 )
+
+[node name="Unit" type="Sprite" parent="Score"]
+position = Vector2( -812.639, -1066.21 )
+scale = Vector2( 0.132752, 0.133503 )
+texture = ExtResource( 27 )
+
+[node name="Decimal" type="Sprite" parent="Score"]
+position = Vector2( -892.24, -1066.94 )
+scale = Vector2( 0.129905, 0.124223 )
+texture = ExtResource( 28 )
+
+[node name="Icon" type="Sprite" parent="Score"]
+position = Vector2( -1017.52, -1066.75 )
+scale = Vector2( 0.108593, 0.119525 )
+texture = ExtResource( 29 )

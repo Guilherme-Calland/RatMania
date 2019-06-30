@@ -3,7 +3,9 @@ extends Node2D
 onready var Background0 = $Background/Background0
 onready var Background1 = $Background/Background1
 onready var Tile = $Tile/Tile
+onready var Tile2 = $Tile/Tile2
 onready var tile_posX = Tile.position.x
+onready var tile2_posX = Tile2.position.x
 
 var tileCounter = 0
 
@@ -21,8 +23,10 @@ func tileRoll(speed):
 #		Tile.position.x = 0
 	if tileCounter >= 640:
 		Tile.position.x =tile_posX
+		Tile2.position.x =tile2_posX
 		tileCounter = 0
 	Tile.position.x -= speed
+	Tile2.position.x -= speed
 	tileCounter += speed
 	pass
 	
