@@ -13,13 +13,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="BigBadMouse" type="KinematicBody2D"]
+[node name="BigBadMouse" type="Node2D"]
 position = Vector2( 376.213, 239.006 )
 scale = Vector2( 0.1, 0.1 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
