@@ -6,3 +6,5 @@
 
 [node name="Label" parent="." index="0"]
 text = "Menu"
+align = 1
+autowrap = true
