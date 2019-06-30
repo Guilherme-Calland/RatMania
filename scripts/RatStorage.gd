@@ -9,7 +9,6 @@ var positionInArea = Vector2(0, 0)
 func spawn_at_zone():
 #	Could be used in case to very how many rats are already on scene
 #	var first_zone_length = storage_zone_01.get_child_count()
-
 	var size = storage_zone_01.shape.extents * 2
 	
 	var rand_width = randi() % int(size[0]+1)
