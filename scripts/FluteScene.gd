@@ -1,12 +1,7 @@
-extends KinematicBody2D
+extends Node2D
 
-export var speed = 400 # horizontal speed (pixels/sec)
+onready var animated_sprite = self.get_node("AnimatedSprite")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimatedSprite.animation = "walk"
-	$AnimatedSprite.play()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	animated_sprite.animation = "walk"
+	animated_sprite.play()

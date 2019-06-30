@@ -15,7 +15,6 @@ onready var squaak = $Mouse/MouseTemp/Squaak
 onready var flute_song = $FluteSong/FluteSong100
 onready var A = $FluteSong/A
 onready var B = $FluteSong/B
-onready var Cs = $"FluteSong/C#"
 onready var D = $FluteSong/D
 onready var E = $FluteSong/E
 onready var Fs = $"FluteSong/F#"
@@ -32,7 +31,7 @@ var time_start = 0
 var elapsed = 0
 var acerto0 = false
 var acerto1 = false
-var firstTutOver = false
+var firstTutOver = true
 var randNum = 0
 var randLock = false
 var randLock2 = false
@@ -47,7 +46,6 @@ func _ready():
 	$FluteSong.set_global_volume(volume)
 
 func _process(delta):
-	
 	var time_now = OS.get_ticks_msec()
 	if !flute_song.playing:
 		flute_song.play()
@@ -56,17 +54,16 @@ func _process(delta):
 	elapsed = time_now - time_start
 	
 	Scenary.scenaryRoll(speed)
-	Flute.fluteMovement(elapsed)
 	Score.setScore(score)
-	
+
 	if !firstTutOver:
 		#firstTutOver faz com que o tutorial rode apenas uma vez
 		firstTutOver = Tutorial.first_tutorial(elapsed)
-	
+
 	if firstTutOver:
-		var elapsedMod = elapsed%2000
+		var elapsedMod = elapsed % 2000
 		if elapsedMod >= 1000 && elapsedMod <= 1100 && !randLock:
-			randNum = randi()%2+0 #numero randomico 0 ou 1 
+			randNum = randi() % 2 #numero randomico 0 ou 1 
 			if randNum == 0:
 				MouseTemp.show()
 				if !squeek.playing:
@@ -101,7 +98,7 @@ func _process(delta):
 				randLock2 = true
 				if score <= 0:
 					flute_song.stop()
-					get_tree().change_scene("res://scenes/gameOver.tscn")
+					get_tree().change_scene("res://scenes/GameOver.tscn")
 		if elapsedMod >= 1800 && elapsedMod <= 1900:
 			acerto0 = false
 			randLock = false
