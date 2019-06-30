@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/MenuScene/startGame.gd" type="Script" id=1]
+[ext_resource path="res://scripts/startGame.gd" type="Script" id=1]
 [ext_resource path="res://SPRITES/MENU/Webp.net-resizeimage (1).png" type="Texture" id=2]
 [ext_resource path="res://scenes/MenuScene/buttons/StartButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SPRITES/BACKGROUND_SCROLL/background2.jpg" type="Texture" id=4]
@@ -43,6 +43,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StartButton2" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+margin_right = 540.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 
@@ -64,6 +65,7 @@ texture = ExtResource( 4 )
 flip_h = true
 
 [node name="Flute" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 6 )
 
 [node name="Flute" type="Sprite" parent="Flute"]
@@ -73,6 +75,7 @@ z_index = 1
 texture = ExtResource( 7 )
 
 [node name="Tile" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Tile" type="Sprite" parent="Tile"]
 position = Vector2( 644.055, 472.273 )
