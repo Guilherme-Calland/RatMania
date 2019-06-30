@@ -100,6 +100,7 @@ func _process(delta):
 				score -= 1
 				randLock2 = true
 				if score <= 0:
+					flute_song.stop()
 					get_tree().change_scene("res://scenes/gameOver.tscn")
 		if elapsedMod >= 1800 && elapsedMod <= 1900:
 			acerto0 = false

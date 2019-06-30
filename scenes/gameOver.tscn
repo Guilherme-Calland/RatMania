@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://scripts/gameOver.gd" type="Script" id=1]
+[ext_resource path="res://scenes/gameOver.gd" type="Script" id=1]
 [ext_resource path="res://SPRITES/MENU/Webp.net-resizeimage (1).png" type="Texture" id=2]
 [ext_resource path="res://scenes/MenuScene/buttons/RetryButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/MenuScene/buttons/RetryButton.gd" type="Script" id=4]
@@ -10,12 +10,12 @@
 [ext_resource path="res://SPRITES/BACKGROUND_SCROLL/background2.jpg" type="Texture" id=8]
 [ext_resource path="res://SPRITES/BACKGROUND/background.jpg" type="Texture" id=9]
 [ext_resource path="res://SPRITES/TILE_SCROLL/TILEx16.png" type="Texture" id=10]
-[ext_resource path="res://fonts/monserrat_35.tres" type="DynamicFontData" id=11]
-[ext_resource path="res://Music/Game Over.wav" type="AudioStream" id=12]
+[ext_resource path="res://Music/Game Over.wav" type="AudioStream" id=11]
+[ext_resource path="res://fonts/monserrat_35.tres" type="DynamicFontData" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
-font_data = ExtResource( 11 )
+font_data = ExtResource( 12 )
 
 [node name="gameOver" type="Node2D"]
 position = Vector2( 1104.18, 1130.56 )
@@ -91,6 +91,10 @@ scale = Vector2( 0.240909, 0.246756 )
 z_index = -1
 texture = ExtResource( 10 )
 
+[node name="gameOverSong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
+
 [node name="Control" type="Control" parent="."]
 margin_left = -942.0
 margin_top = -1089.5
@@ -108,9 +112,5 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 10
 text = "Game Over"
 align = 1
-
-[node name="gameOverSong" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 12 )
-volume_db = -10.0
 [connection signal="pressed" from="Menu/CenterRow/Buttons/RetryButton" to="Menu/CenterRow/Buttons/RetryButton" method="_on_RetryButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/MenuButton" to="Menu/CenterRow/Buttons/MenuButton" method="_on_MenuButton_pressed"]
