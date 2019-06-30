@@ -111,6 +111,7 @@ func _process(delta):
 							randLock2 = true	
 						else:
 							gameOver = true
+							get_tree().change_scene("res://scenes/gameOver.tscn")
 						
 				if elapsedMod >= 1800 && elapsedMod <= 1900:
 					acerto0 = false
