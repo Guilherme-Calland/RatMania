@@ -33,6 +33,7 @@
 
 
 [node name="Game" type="Node2D"]
+editor/display_folded = true
 position = Vector2( 1101.9, 1132.98 )
 script = ExtResource( 1 )
 
@@ -95,6 +96,7 @@ z_index = 1
 texture = ExtResource( 13 )
 
 [node name="Mouse" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -204.88, -425.893 )
 scale = Vector2( 1.19192, 1.1594 )
 z_index = 2
@@ -121,6 +123,7 @@ texture = ExtResource( 17 )
 flip_h = true
 
 [node name="Mice" type="Node2D" parent="Mouse"]
+editor/display_folded = true
 position = Vector2( -129.812, -79.6764 )
 scale = Vector2( 0.65228, 0.690247 )
 
@@ -195,7 +198,6 @@ z_index = -2
 texture = ExtResource( 18 )
 
 [node name="Scenary" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 19 )
 
 [node name="Background" type="Node2D" parent="Scenary"]
@@ -250,6 +252,7 @@ texture = ExtResource( 24 )
 script = ExtResource( 25 )
 
 [node name="Score" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -252.697, -294.813 )
 scale = Vector2( 0.762312, 0.735694 )
 script = ExtResource( 26 )

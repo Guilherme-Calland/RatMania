@@ -100,10 +100,14 @@ func _process(delta):
 			if elapsedMod  >= 1700 && elapsedMod <= 1800:
 				MouseTemp.hide()
 				if !acerto0 && !randLock2:
-					Mouse.getMouse(score).hide()
-					score -= 1
-					Mouse.getMouse(score)
-					randLock2 = true
+					if Mouse.getMouse(score) != null:
+						Mouse.getMouse(score).hide()
+						score -= 1
+						Mouse.getMouse(score)
+						randLock2 = true
+					else:
+						get_tree().change_scene("res://scenes/gameOver.tscn")
+
 			if elapsedMod >= 1800 && elapsedMod <= 1900:
 				acerto0 = false
 				randLock = false
