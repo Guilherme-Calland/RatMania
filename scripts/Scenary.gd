@@ -1,9 +1,9 @@
 extends Node2D
 
-onready var Background0 = $Background/Background0
-onready var Background1 = $Background/Background1
-onready var Tile = $Tile/Tile
-onready var Tile2 = $Tile/Tile2
+onready var Background0 = get_node("Background/Background0")
+onready var Background1 = get_node("Background/Background1")
+onready var Tile = get_node("Tile/Tile")
+onready var Tile2 = get_node("Tile/Tile2")
 onready var tile_posX = Tile.position.x
 onready var tile2_posX = Tile2.position.x
 

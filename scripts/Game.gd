@@ -2,10 +2,15 @@ extends Node2D
 
 #velocidade
 var speed = 2
+
+#desativar tutorial
+var firstTutOver = false
 #pontuacao
 var score = 1
+###########################
 #volume
 var volume = -10
+###########################
 
 
 onready var MouseTemp = get_node("Mouse/MouseTemp/MouseTemp")
@@ -16,6 +21,7 @@ onready var Flute = get_node("Flute")
 onready var FluteSong = get_node("FluteSong")
 onready var Score = get_node("Score")
 onready var FirstSequence = get_node("FirstSequence")
+onready var SecondSequence = get_node("SecondSequence")
 onready var S = get_node("Keys/S")
 onready var K = get_node("Keys/K")
 
@@ -24,7 +30,6 @@ onready var button = get_node(button_path)
 
 var time_start = 0
 var elapsed = 0
-var firstTutOver = false
 
 func _ready():
 	set_process(true)
@@ -63,5 +68,7 @@ func _process(delta):
 	if !firstTutOver:
 		#firstTutOver faz com que o tutorial rode apenas uma vez
 		firstTutOver = Tutorial.first_tutorial(elapsed,button)
-	if firstTutOver:
+	if score < 10 && firstTutOver:
 		score = FirstSequence.firstSequenceGo(firstTutOver, elapsed, score)
+	elif score >= 10:
+		score = SecondSequence.secondSequenceGo(elapsed, score)

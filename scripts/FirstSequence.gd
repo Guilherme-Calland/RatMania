@@ -25,16 +25,16 @@ onready var squaak = get_node("../Mouse/MouseTemp/Squaak")
 #	pass # Replace with function body.
 
 func firstSequenceGo(firstTutOver,elapsed,score):
-	
-	var elapsedMod = elapsed % 2000
-	if elapsedMod >= 0 && elapsedMod <= 100 && !randLock3:
-		counter+=1
-		randLock3 = true
-	if counter == 2:
-		start = true
-	if elapsedMod >= 100:
-		randLock3 = false
-	if firstTutOver && start:
+	var elapsedMod = elapsed%2000
+	if !start:
+		if elapsedMod >= 0 && elapsedMod <= 100 && !randLock3:
+			counter+=1
+			randLock3 = true
+		if counter == 2:
+			start = true
+		if elapsedMod >= 1000 && elapsedMod <= 1100:
+			randLock3 = false
+	if (firstTutOver && start):
 		if elapsedMod >= 0 && elapsedMod <= 100 && !randLock:
 			randNum = randi() % 2 #numero randomico 0 ou 1 
 			if randNum == 0:

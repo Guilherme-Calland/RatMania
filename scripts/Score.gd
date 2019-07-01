@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var Unit = $Unit
-onready var Decimal = $Decimal
+onready var Unit = get_node("Unit")
+onready var Decimal = get_node("Decimal")
 
 func setScore(score):
 	var unit = score%10

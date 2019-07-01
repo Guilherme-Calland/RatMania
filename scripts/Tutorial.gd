@@ -1,29 +1,22 @@
 extends Node2D
 
-onready var flute_song100 = $".."/FluteSong/FluteSong100
-onready var A = $".."/FluteSong/A
-onready var B = $".."/FluteSong/B
-onready var Cs = $".."/"FluteSong/C#"
-onready var D = $".."/FluteSong/D
-onready var E = $".."/FluteSong/E
-onready var Fs = $".."/"FluteSong/F#"
-onready var Gs = $".."/"FluteSong/G#"
-onready var Flow = $".."/FluteSong/Flow
-onready var Elow = $".."/FluteSong/Elow
+onready var flute_song100 = get_node("../FluteSong/FluteSong100")
+onready var A = get_node("../FluteSong/A")
+onready var E = get_node("../FluteSong/E")
 
 
-onready var S = $".."/Keys/S
-onready var K = $".."/Keys/K
+onready var S = get_node("../Keys/S")
+onready var K = get_node("../Keys/K")
 
 onready var S_text = preload("res://SPRITES/TECLADO/S.png")
 onready var S_pressed_text = preload("res://SPRITES/TECLADO/S_pressed.png")
 onready var K_text = preload("res://SPRITES/TECLADO/K.png")
 onready var K_pressed_text = preload("res://SPRITES/TECLADO/K_pressed.png")
 
-onready var MouseTemp = $".."/Mouse/MouseTemp/MouseTemp
+onready var MouseTemp = get_node("../Mouse/MouseTemp/MouseTemp")
 
-onready var squeek = $".."/Mouse/MouseTemp/Squeek
-onready var squaak = $".."/Mouse/MouseTemp/Squaak
+onready var squeek = get_node("../Mouse/MouseTemp/Squeek")
+onready var squaak = get_node("../Mouse/MouseTemp/Squaak")
 
 func first_tutorial(time,button):
 	if time >= 8500 && time <= 8600:
