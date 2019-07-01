@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Flute.tscn" type="PackedScene" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://SPRITES/RATO_SCORE/NUMERO_0.png" type="Texture" id=30]
 [ext_resource path="res://SPRITES/RATO_SCORE/RATO SCORE_ICONE.png" type="Texture" id=31]
 [ext_resource path="res://scripts/FirstSequence.gd" type="Script" id=32]
+[ext_resource path="res://SPRITES/SKIP_TUTORIAL/SKIP_TUTORIAL.png" type="Texture" id=33]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 144.008, 27.2734 )
@@ -39,6 +40,7 @@ extents = Vector2( 144.008, 27.2734 )
 [node name="Game" type="Node2D"]
 position = Vector2( 1101.9, 1132.98 )
 script = ExtResource( 1 )
+button_path = NodePath("SkipTutorial")
 
 [node name="Flute" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
@@ -50,7 +52,6 @@ scale = Vector2( 0.108256, 0.0859786 )
 texture = ExtResource( 3 )
 
 [node name="FluteSong" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="FluteSong100" type="AudioStreamPlayer" parent="FluteSong"]
@@ -110,7 +111,6 @@ shape = SubResource( 1 )
 [node name="Mouse" parent="RatStorage/StorageZone_1" instance=ExtResource( 15 )]
 
 [node name="Mouse" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -204.88, -425.893 )
 scale = Vector2( 1.19192, 1.1594 )
 z_index = 2
@@ -238,3 +238,12 @@ texture = ExtResource( 31 )
 
 [node name="FirstSequence" type="Node2D" parent="."]
 script = ExtResource( 32 )
+
+[node name="SkipTutorial" type="Button" parent="."]
+visible = false
+margin_left = -807.0
+margin_top = -1100.0
+margin_right = 1593.0
+margin_bottom = -587.0
+rect_scale = Vector2( 0.104252, 0.109452 )
+icon = ExtResource( 33 )

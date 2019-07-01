@@ -8,25 +8,30 @@ var score = 1
 var volume = -10
 
 onready var rat_storage = self.get_node("RatStorage")
-onready var MouseTemp = $Mouse/MouseTemp/MouseTemp
-onready var squeek = $Mouse/MouseTemp/Squeek
-onready var squaak = $Mouse/MouseTemp/Squaak
+onready var MouseTemp = get_node("Mouse/MouseTemp/MouseTemp")
+onready var squeek = get_node("Mouse/MouseTemp/Squeek")
+onready var squaak = get_node("Mouse/MouseTemp/Squaak")
 
-onready var flute_song = $FluteSong/FluteSong100
-onready var A = $FluteSong/A
-onready var B = $FluteSong/B
-onready var D = $FluteSong/D
-onready var E = $FluteSong/E
-onready var Fs = $"FluteSong/F#"
-onready var Gs = $"FluteSong/G#"
-onready var Flow = $FluteSong/Flow
-onready var Elow = $FluteSong/Elow
-onready var Tutorial = $Tutorial
-onready var Scenary = $Scenary
-onready var Flute = $Flute
-onready var FluteSong = $FluteSong
-onready var Score = $Score
-onready var FirstSequence = $FirstSequence
+onready var flute_song = get_node("FluteSong/FluteSong100")
+onready var A = get_node("FluteSong/A")
+onready var B = get_node("FluteSong/B")
+onready var D = get_node("FluteSong/D")
+onready var E = get_node("FluteSong/E")
+onready var Fs = get_node("FluteSong/F#")
+onready var Gs = get_node("FluteSong/G#")
+onready var Flow = get_node("FluteSong/Flow")
+onready var Elow = get_node("FluteSong/Elow")
+onready var Tutorial = get_node("Tutorial")
+onready var Scenary = get_node("Scenary")
+onready var Flute = get_node("Flute")
+onready var FluteSong = get_node("FluteSong")
+onready var Score = get_node("Score")
+onready var FirstSequence = get_node("FirstSequence")
+onready var S = get_node("Keys/S")
+onready var K = get_node("Keys/K")
+
+export (NodePath) var button_path
+onready var button = get_node(button_path)
 
 var time_start = 0
 var elapsed = 0
@@ -46,7 +51,16 @@ func _ready():
 	#cuidado se voce estiver com fone, volume > 0 é bem alto.
 	$FluteSong.set_global_volume(volume)
 
+
+
 func _process(delta):
+	if button.pressed:
+		firstTutOver = true
+		button.hide()
+		S.hide()
+		K.hide()
+		MouseTemp.hide()
+	
 	var time_now = OS.get_ticks_msec()
 	if !flute_song.playing:
 		flute_song.play()
@@ -64,7 +78,6 @@ func _process(delta):
 
 	if !firstTutOver:
 		#firstTutOver faz com que o tutorial rode apenas uma vez
-		firstTutOver = Tutorial.first_tutorial(elapsed)
-
+		firstTutOver = Tutorial.first_tutorial(elapsed,button)
 	if firstTutOver:
 		score = FirstSequence.firstSequenceGo(firstTutOver, elapsed, score)

@@ -20,7 +20,6 @@ __meta__ = {
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-editor/display_folded = true
 margin_left = 90.9495
 margin_top = 427.848
 margin_right = 700.949

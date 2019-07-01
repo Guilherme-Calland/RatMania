@@ -11,6 +11,7 @@ onready var Gs = $".."/"FluteSong/G#"
 onready var Flow = $".."/FluteSong/Flow
 onready var Elow = $".."/FluteSong/Elow
 
+
 onready var S = $".."/Keys/S
 onready var K = $".."/Keys/K
 
@@ -20,16 +21,13 @@ onready var K_text = preload("res://SPRITES/TECLADO/K.png")
 onready var K_pressed_text = preload("res://SPRITES/TECLADO/K_pressed.png")
 
 onready var MouseTemp = $".."/Mouse/MouseTemp/MouseTemp
-onready var Mouse0 = $".."/Mouse/Mice/Mouse0
-onready var Mouse1 = $".."/Mouse/Mice/Mouse1
-onready var Mouse2 = $".."/Mouse/Mice/Mouse2
-onready var Mouse3 = $".."/Mouse/Mice/Mouse3
 
 onready var squeek = $".."/Mouse/MouseTemp/Squeek
 onready var squaak = $".."/Mouse/MouseTemp/Squaak
 
-func first_tutorial(time):
+func first_tutorial(time,button):
 	if time >= 8500 && time <= 8600:
+		button.show()
 		S.texture = S_text
 		S.show()
 	if time >= 9000 && time <= 9100:
@@ -61,6 +59,7 @@ func first_tutorial(time):
 		if !A.playing:
 			A.play()
 		MouseTemp.hide()
+		button.hide()
 	if time >= 13100 && time <=13200:
 		K.texture = K_text
 	if time >= 13200 && time <= 13300:
