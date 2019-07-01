@@ -31,7 +31,7 @@ var time_start = 0
 var elapsed = 0
 var acerto0 = false
 var acerto1 = false
-var firstTutOver = true
+var firstTutOver = false
 var randNum = 0
 var randLock = false
 var randLock2 = false
@@ -55,6 +55,7 @@ func _process(delta):
 	
 	Scenary.scenaryRoll(speed)
 	Score.setScore(score)
+	Flute.fluteMovement(elapsed)
 
 	if !firstTutOver:
 		#firstTutOver faz com que o tutorial rode apenas uma vez

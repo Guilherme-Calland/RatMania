@@ -89,7 +89,7 @@ focus_mode = 0
 enabled_focus_mode = 0
 script = ExtResource( 9 )
 
-[node name="GameOverSong" type="AudioStreamPlayer2D" parent="."]
+[node name="GameOverSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 volume_db = -10.0
 [connection signal="pressed" from="Menu/CenterRow/Buttons/RetryButton" to="Menu/CenterRow/Buttons/RetryButton" method="_on_RetryButton_pressed"]

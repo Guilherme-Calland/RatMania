@@ -37,36 +37,36 @@ func first_tutorial(time):
 		if !squeek.playing:
 			squeek.play()
 #
-	if time >= 9500 && time <= 9600:
+	if time >= 10000 && time <= 10100:
 		S.texture = S_pressed_text
 		if !E.playing:
 			E.play()
 		MouseTemp.hide()
-	if time >= 9600 && time <=9700:
+	if time >= 10100 && time <=10200:
 		S.texture = S_text
-	if time >= 9700 && time <= 9800:
+	if time >= 10200 && time <= 10300:
 		S.hide()
 		
-	if time >= 10500 && time <= 10600:
+	if time >= 11500 && time <= 11600:
 		K.texture = K_text
 		K.show()
 
-	if time >= 11000 && time <= 11100:
+	if time >= 12000 && time <= 12100:
 		MouseTemp.show()
 		if !squaak.playing:
 			squaak.play()
 #
-	if time >= 11500 && time <= 11600:
+	if time >= 13000 && time <= 13100:
 		K.texture = K_pressed_text
 		if !A.playing:
 			A.play()
 		MouseTemp.hide()
-	if time >= 11600 && time <=11700:
+	if time >= 13100 && time <=13200:
 		K.texture = K_text
-	if time >= 11700 && time <= 11800:
+	if time >= 13200 && time <= 13300:
 		K.hide()
 		
-	if time >= 17000:
+	if time >= 15000:
 		#retorna que acabou o primeiro tutorial
 		return true
 #
