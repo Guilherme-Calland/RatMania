@@ -95,3 +95,10 @@ func secondSequenceGo(elapsed, score):
 		randLock = false
 		randLock3 = false
 	return score
+
+func finnished2(elapsed):
+	var elapsedMod = elapsed%4000
+	if elapsedMod >= 0 && elapsedMod <= 100:
+		return true
+	else:
+		return false

@@ -63,14 +63,21 @@ func firstSequenceGo(firstTutOver,elapsed,score):
 						score += 1
 						rat_storage.spawn_at_zone()
 						acerto0 = true
-		if elapsedMod  >= 1200 && elapsedMod <= 1300:
+		if elapsedMod  >= 1200 && elapsedMod < 1300:
 			MouseTemp.hide()
 			if !acerto0 && !randLock2:
+				randLock2 = true
 				rat_storage.destroy_rat()
 				score -= 1
-				randLock2 = true
 		if elapsedMod >= 1300 && elapsedMod <= 1400:
 			acerto0 = false
 			randLock = false
 			randLock2 = false
 	return score
+
+func finnished1(elapsed):
+	var elapsedMod = elapsed%2000
+	if elapsedMod >= 0 && elapsedMod <= 100:
+		return true
+	else:
+		return false
