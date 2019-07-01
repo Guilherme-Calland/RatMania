@@ -7,20 +7,9 @@ var score = 1
 #volume
 var volume = -10
 
-onready var rat_storage = self.get_node("RatStorage")
-onready var MouseTemp = get_node("Mouse/MouseTemp/MouseTemp")
-onready var squeek = get_node("Mouse/MouseTemp/Squeek")
-onready var squaak = get_node("Mouse/MouseTemp/Squaak")
 
+onready var MouseTemp = get_node("Mouse/MouseTemp/MouseTemp")
 onready var flute_song = get_node("FluteSong/FluteSong100")
-onready var A = get_node("FluteSong/A")
-onready var B = get_node("FluteSong/B")
-onready var D = get_node("FluteSong/D")
-onready var E = get_node("FluteSong/E")
-onready var Fs = get_node("FluteSong/F#")
-onready var Gs = get_node("FluteSong/G#")
-onready var Flow = get_node("FluteSong/Flow")
-onready var Elow = get_node("FluteSong/Elow")
 onready var Tutorial = get_node("Tutorial")
 onready var Scenary = get_node("Scenary")
 onready var Flute = get_node("Flute")
@@ -35,12 +24,7 @@ onready var button = get_node(button_path)
 
 var time_start = 0
 var elapsed = 0
-var acerto0 = false
-var acerto1 = false
 var firstTutOver = false
-var randNum = 0
-var randLock = false
-var randLock2 = false
 
 func _ready():
 	set_process(true)
