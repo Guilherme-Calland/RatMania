@@ -218,7 +218,6 @@ texture = ExtResource( 26 )
 script = ExtResource( 27 )
 
 [node name="Score" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -252.697, -294.813 )
 scale = Vector2( 0.762312, 0.735694 )
 script = ExtResource( 28 )
