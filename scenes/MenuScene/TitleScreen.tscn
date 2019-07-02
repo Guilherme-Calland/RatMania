@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/startGame.gd" type="Script" id=1]
 [ext_resource path="res://scenes/MenuScene/buttons/StartButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://SPRITES/MENU/Webp.net-resizeimage (1).png" type="Texture" id=3]
+[ext_resource path="res://SPRITES/logo/logo3.png" type="Texture" id=3]
 [ext_resource path="res://SPRITES/BACKGROUND_SCROLL/background2.jpg" type="Texture" id=4]
 [ext_resource path="res://SPRITES/BACKGROUND/background.jpg" type="Texture" id=5]
 [ext_resource path="res://Music/AmboB Polka.wav" type="AudioStream" id=6]
@@ -48,12 +48,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -636.372
-margin_top = -328.26
-margin_right = -377.372
-margin_bottom = -149.26
-rect_scale = Vector2( 1.77874, 1.45304 )
+margin_left = -704.306
+margin_top = -383.679
+margin_right = -69.306
+margin_bottom = 57.3207
+rect_scale = Vector2( 0.876454, 0.712812 )
 texture = ExtResource( 3 )
+expand = true
 stretch_mode = 4
 
 [node name="Background0" type="Sprite" parent="."]

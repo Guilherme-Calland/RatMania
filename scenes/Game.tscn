@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Flute.tscn" type="PackedScene" id=2]
-[ext_resource path="res://SPRITES/FLAUTA/FLAUTA 1.png" type="Texture" id=3]
+[ext_resource path="res://SPRITES/SKATE SPRITE/s1.png" type="Texture" id=3]
 [ext_resource path="res://scripts/FluteSong.gd" type="Script" id=4]
 [ext_resource path="res://Music/Tarantella.wav" type="AudioStream" id=5]
 [ext_resource path="res://sfx/Flute/medium_shorter/A_flute.wav" type="AudioStream" id=6]
@@ -44,11 +44,10 @@ script = ExtResource( 1 )
 button_path = NodePath("SkipTutorial")
 
 [node name="Flute" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
-position = Vector2( -760.743, -789.062 )
+position = Vector2( -735.445, -814.361 )
 
 [node name="Flute" type="Sprite" parent="Flute"]
-position = Vector2( 77.9732, 4.85107 )
+position = Vector2( 63.7307, -5.64331 )
 scale = Vector2( 0.108256, 0.0859786 )
 texture = ExtResource( 3 )
 

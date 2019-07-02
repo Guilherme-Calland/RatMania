@@ -11,6 +11,7 @@ var score = 1
 #volume
 var volume = -10
 ###########################
+var contador = 0
 
 
 onready var MouseTemp = get_node("Mouse/MouseTemp/MouseTemp")
@@ -72,11 +73,13 @@ func _process(delta):
 	if !firstTutOver:
 		#firstTutOver faz com que o tutorial rode apenas uma vez
 		firstTutOver = Tutorial.first_tutorial(elapsed,button)
-	if score < 10 && firstTutOver:
+	if score < 10 && firstTutOver && contador < 10:
 		score = FirstSequence.firstSequenceGo(firstTutOver, elapsed, score)
-	elif score >= 10 && score < 20:
+	elif score >= 10 && score < 20 && contador < 20:
+		contador = 10
 		score = SecondSequence.secondSequenceGo(elapsed, score)
-	elif score >= 20:
+	elif (score >= 20) || contador == 20:
+		contador = 20
 		if !randLock:
 			randNum  = randi()%2
 			randLock = true
