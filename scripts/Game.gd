@@ -27,8 +27,7 @@ onready var S = get_node("Keys/S")
 onready var K = get_node("Keys/K")
 onready var randLock = false
 onready var randNum = 0
-onready var finnished1 = false
-onready var finnished2 = false
+
 
 export (NodePath) var button_path
 onready var button = get_node(button_path)
@@ -73,13 +72,11 @@ func _process(delta):
 	if !firstTutOver:
 		#firstTutOver faz com que o tutorial rode apenas uma vez
 		firstTutOver = Tutorial.first_tutorial(elapsed,button)
-	if score < 10 && firstTutOver && contador < 10:
+	if score < 10 && firstTutOver:
 		score = FirstSequence.firstSequenceGo(firstTutOver, elapsed, score)
-	elif score >= 10 && score < 20 && contador < 20:
-		contador = 10
+	elif score >= 10 && score < 20 :
 		score = SecondSequence.secondSequenceGo(elapsed, score)
-	elif (score >= 20) || contador == 20:
-		contador = 20
+	elif (score >= 20) :
 		if !randLock:
 			randNum  = randi()%2
 			randLock = true
