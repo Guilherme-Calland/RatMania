@@ -13,7 +13,6 @@ var volume = -10
 ###########################
 var contador = 0
 
-
 onready var MouseTemp = get_node("Mouse/MouseTemp/MouseTemp")
 onready var flute_song = get_node("FluteSong/FluteSong100")
 onready var Tutorial = get_node("Tutorial")
