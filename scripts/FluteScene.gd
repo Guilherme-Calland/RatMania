@@ -6,8 +6,7 @@ onready var flute_text_1 = preload("res://SPRITES/SKATE SPRITE/s2.png")
 onready var flute_text_2 = preload("res://SPRITES/SKATE SPRITE/s3.png")
 onready var flute_text_4 = preload("res://SPRITES/SKATE SPRITE/s4.png")
 
-onready var Flute = $Flute
-
+onready var Flute = get_node("Flute")
 
 func fluteMovement(elapsed):
 	var elapsedMod = elapsed%4000
